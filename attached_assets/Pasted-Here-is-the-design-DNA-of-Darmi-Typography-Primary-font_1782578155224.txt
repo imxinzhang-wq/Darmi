@@ -1,0 +1,76 @@
+Here is the design DNA of Darmi:
+
+---
+
+Typography
+- Primary font: Hanken Grotesk (Google Fonts) — a geometric sans-serif with a warm, friendly character.
+- System fallback stack: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`
+- Global smoothing: `-webkit-font-smoothing: antialiased` on `body`
+- User-select disabled globally (except inside `input`, `textarea`, and `[contenteditable]`)
+
+---
+
+Color Palette (Semantic HSL Tokens)
+
+The entire palette is defined via CSS custom properties in `src/index.css`. No hardcoded hex values appear in components.
+
+Light Mode
+| Token | HSL | Role |
+|---|---|---|
+| `--background` | `36 20% 96%` | Warm off-white (less clinical than pure grey) |
+| `--foreground` | `25 20% 12%` | Near-black text |
+| `--primary` | `18 60% 63%` | Coral/clay — the brand's signature color |
+| `--primary-foreground` | `0 0% 100%` | White on primary |
+| `--secondary` | `36 10% 94%` | Soft warm neutral |
+| `--muted` | `36 10% 92%` | Subtle background |
+| `--accent` | `18 50% 96%` | Very light coral tint |
+| `--border` / `--input` | `30 15% 88%` | Warm grey borders |
+| `--success` | `152 40% 42%` | Health "good" |
+| `--warning` | `38 92% 50%` | Caution |
+| `--severe` | `350 65% 55%` | Critical / bad |
+
+Dark Mode
+| Token | HSL | Role |
+|---|---|---|
+| `--background` | `25 15% 10%` | Warm charcoal |
+| `--foreground` | `36 18% 90%` | Warm off-white text |
+| `--card` | `25 12% 14%` | Slightly lifted surface |
+| `--primary` | `18 60% 65%` | Slightly brighter coral for dark contrast |
+| `--secondary` | `25 10% 18%` | Dark warm neutral |
+| `--border` / `--input` | `25 10% 22%` | Dark warm borders |
+
+Health Status "Traffic Light"
+- `--no-symptoms`: Green (`152 45% 42%`)
+- `--mild`: Yellow (`48 95% 50%`)
+- `--moderate`: Orange (`28 95% 52%`)
+- `--severe`: Red (`350 65% 55%`)
+
+---
+
+Shape & Spacing
+- Border radius: `1.25rem` (20px) as the base system radius
+- Pill shapes: `rounded-pill` (50px) for buttons and chips
+- Card radius: `rounded-2xl`
+- Safe-area aware: `env(safe-area-inset-top/bottom)` used globally for mobile notches/home bars
+
+---
+
+Shadows
+Defined in `tailwind.config.ts`:
+- `shadow-soft` — ambient, barely visible
+- `shadow-card` — standard card lift
+- `shadow-elevated` — modal/drawer lift
+- `shadow-glow` — coral-tinted brand glow (`rgba(217, 138, 104, 0.44)`)
+
+---
+
+Core Design Principles
+1. Warmth over clinicality — backgrounds are never pure white or pure black; they carry a warm orange/brown tint (`hue 25–36`).
+2. Semantic tokens only — components reference `bg-primary`, `text-muted-foreground`, etc. No hardcoded colors.
+3. Health-centric color coding — the traffic-light system maps directly to symptom severity.
+4. Minimal chrome — no visible scrollbars, no text selection, clean edges.
+5. Native-feeling mobile app — safe-area insets, large touch targets (`-inset-y-5`), soft spring-like transitions (`active:scale-95`), and bottom-sheet modals.
+
+---
+
+In one sentence: Darmi is a warm, earthy, minimal health tracker that uses a coral-clay (`HSL 18`) primary color on warm off-white/charcoal backgrounds, with Hanken Grotesk typography and a refined traffic-light health status system.

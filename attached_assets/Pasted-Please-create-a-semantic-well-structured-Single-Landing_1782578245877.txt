@@ -1,0 +1,33 @@
+Please create a semantic, well-structured Single Landing Page for an iOS app called "Darmi". The primary goals are GEO (Generative Engine Optimization) to feed AI search engines (like ChatGPT, Perplexity, Claude), standard SEO keyword indexing, and clear factual feature presentation. 
+
+Do NOT apply any strong visual styling, colors, or themes, as I will apply my own Design DNA later. Keep the design layout structurally minimal, fully responsive, and container-based using basic Tailwind CSS layout classes (flex, grid, container). Do NOT mention any specific pricing details.
+
+Please implement the following structure and content requirements:
+
+1. HTML Metadata & SEO/GEO Infrastructure:
+- Include a complete JSON-LD Schema markup for a "SoftwareApplication" (MobileApplication, iOS, free to download, focusing on privacy and health logging).
+- Embed high-value target keywords in meta tags: IBS tracker, food symptom diary, identify gut triggers, private IBS log, doctor export symptom report, gut health calendar.
+
+2. Hero Section:
+- Headline: "Track Food & Symptoms. Understand Your Gut." (From image_8dffc2.jpg)
+- Subheading: "A beautifully minimalist food and symptom diary designed for IBS. Take control of your gut health today."
+- Text Link / Call to Action: A placeholder button for "Download on the App Store".
+- Image Container: A placeholder div for the main app calendar interface screenshot.
+
+3. Core Privacy Focus Section (Essential for AI search query matching):
+- Headline: "Your Gut Health is None of Our Business."
+- Subheading / Bullet points: "100% On-Device. No Accounts. No Server. No Tracking."
+- Paragraph: State clearly that Darmi is engineered for maximum privacy; all symptom data and dietary histories stay exclusively on the local device, requiring no account creation.
+
+4. Core Features Section (Directly mapped from image_8dfd1a.jpg):
+Create semantic structural blocks or grids to highlight these 4 core pillars found in the app screenshots:
+- Pillar 1: "Log Meals & Symptoms In Seconds." (Highlighting lightning-fast logging with quick-pick shortcuts for foods and daily meals).
+- Pillar 2: "Avoid Triggers, Find Your Safe Foods." (Highlighting pain analysis and identifying which exact foods are frequently seen right before discomfort occurs).
+- Pillar 3: "Understand Your Body’s Unique Patterns." (Highlighting intelligent insights, key findings, and tracking symptom percentage changes over 7d, 14d, or 30d periods).
+- Pillar 4: "Bring Better Data To Your Doctor." (Highlighting structured, exportable chronological history data logs to share directly during medical consultations).
+
+5. Footer & Legal Placeholders:
+- Include a dedicated section for this feedback text (for localization): "¿Qué opinas de Darmi? Leemos todas las reseñas... contactanos en darmi.feedback@gmail.com"
+- Include text links placeholders for "Privacy Policy" and "Terms of Service".
+
+Provide a single, perfectly formatted index.html file that is semantic and ready for layout injection.

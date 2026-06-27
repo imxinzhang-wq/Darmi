@@ -1,65 +1,1156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Darmi - Technical Support</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Darmi — IBS Tracker App. Track Food & Symptoms. Understand Your Gut.</title>
+  <meta name="description" content="Darmi is a private, on-device IBS tracker and food symptom diary. Identify gut triggers, log meals, track symptoms, and export structured health reports for your doctor. No accounts. No servers. No tracking." />
+  <meta name="keywords" content="IBS tracker, food symptom diary, identify gut triggers, private IBS log, doctor export symptom report, gut health calendar, irritable bowel syndrome app, food intolerance tracker, gut health diary, symptom logging app" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://darmi.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Darmi — Track Food & Symptoms. Understand Your Gut." />
+  <meta property="og:description" content="A beautifully minimalist food and symptom diary designed for IBS. 100% on-device. No accounts. No servers. No tracking." />
+  <meta property="og:url" content="https://darmi.app/" />
+  <meta property="og:site_name" content="Darmi" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Darmi — IBS Tracker. Private. Local. Yours." />
+  <meta name="twitter:description" content="Track food, symptoms, mood and stress for IBS. All data stays on your device. Available on iOS." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Darmi",
+    "alternateName": "Darmi IBS Tracker",
+    "description": "Darmi is a private, on-device food and symptom diary designed for people living with IBS. It helps users log meals, record symptom intensity, track mood and stress, identify gut triggers, and export structured chronological health data for medical consultations. All data is stored exclusively on the user's device — no accounts, no servers, no data collection.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "iOS",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "On-device food and symptom logging",
+      "IBS trigger identification",
+      "Gut health calendar and trends",
+      "Symptom intensity tracking (7-day, 14-day, 30-day periods)",
+      "Doctor-ready export reports",
+      "Mood and stress tracking",
+      "100% private — no accounts, no servers"
+    ],
+    "privacyPolicyUrl": "#privacy",
+    "url": "https://darmi.app/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Darmi",
+      "email": "darmi.feedback@gmail.com"
+    },
+    "keywords": "IBS tracker, food symptom diary, identify gut triggers, private IBS log, doctor export symptom report, gut health calendar"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <style>
+    :root {
+      --background: hsl(36, 20%, 96%);
+      --foreground: hsl(25, 20%, 12%);
+      --primary: hsl(18, 60%, 63%);
+      --primary-dark: hsl(18, 55%, 52%);
+      --primary-foreground: hsl(0, 0%, 100%);
+      --secondary: hsl(36, 10%, 94%);
+      --muted: hsl(36, 10%, 92%);
+      --muted-foreground: hsl(25, 12%, 48%);
+      --accent: hsl(18, 50%, 96%);
+      --border: hsl(30, 15%, 88%);
+      --card: hsl(0, 0%, 100%);
+      --success: hsl(152, 40%, 42%);
+      --warning: hsl(38, 92%, 50%);
+      --severe: hsl(350, 65%, 55%);
+
+      --radius: 1.25rem;
+      --radius-pill: 50px;
+      --radius-card: 1.5rem;
+
+      --shadow-soft: 0 1px 4px rgba(100, 60, 30, 0.06);
+      --shadow-card: 0 4px 20px rgba(100, 60, 30, 0.10);
+      --shadow-elevated: 0 8px 40px rgba(100, 60, 30, 0.14);
+      --shadow-glow: 0 0 30px rgba(217, 138, 104, 0.44);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 680px;
-      margin: 60px auto;
+      font-family: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.65;
+      user-select: none;
+    }
+
+    input, textarea, [contenteditable] { user-select: text; }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { max-width: 100%; display: block; }
+
+    /* ── Layout ── */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
       padding: 0 24px;
-      color: #222;
+    }
+
+    section { padding: 96px 0; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: hsla(36, 20%, 96%, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--foreground);
+    }
+
+    .nav-logo span {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--foreground);
+      color: var(--primary-foreground);
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .nav-cta:hover { opacity: 0.85; }
+    .nav-cta:active { transform: scale(0.95); }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 80px 0 64px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      border: 1px solid hsl(18, 40%, 88%);
+      color: var(--primary-dark);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--primary);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      color: var(--foreground);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted-foreground);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: var(--primary-foreground);
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 1rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-glow);
+      transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 0 40px rgba(217, 138, 104, 0.55);
+    }
+
+    .btn-primary:active { transform: scale(0.96); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted-foreground);
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 14px 4px;
+      transition: color 0.18s ease;
+    }
+
+    .btn-secondary:hover { color: var(--foreground); }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .phone-mockup {
+      width: 280px;
+      height: 560px;
+      background: var(--card);
+      border-radius: 36px;
+      box-shadow: var(--shadow-elevated), 0 0 0 8px hsl(30, 15%, 82%);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone-notch {
+      height: 32px;
+      background: var(--foreground);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .phone-notch-dot { width: 8px; height: 8px; background: hsl(25, 15%, 25%); border-radius: 50%; }
+    .phone-notch-bar { width: 60px; height: 8px; background: hsl(25, 15%, 22%); border-radius: 4px; }
+
+    .phone-screen {
+      flex: 1;
+      background: var(--background);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow: hidden;
+    }
+
+    .phone-header {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--muted-foreground);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .phone-month {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--foreground);
+      letter-spacing: -0.03em;
+    }
+
+    .phone-calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 3px;
+    }
+
+    .cal-day {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.58rem;
+      font-weight: 600;
+    }
+
+    .cal-day.header { color: var(--muted-foreground); font-weight: 700; }
+    .cal-day.good { background: hsl(152, 40%, 90%); color: hsl(152, 40%, 30%); }
+    .cal-day.mild { background: hsl(48, 95%, 88%); color: hsl(38, 80%, 30%); }
+    .cal-day.moderate { background: hsl(28, 95%, 88%); color: hsl(28, 80%, 30%); }
+    .cal-day.bad { background: hsl(350, 65%, 90%); color: hsl(350, 65%, 40%); }
+    .cal-day.empty { background: transparent; }
+    .cal-day.today {
+      background: var(--primary);
+      color: var(--primary-foreground);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .phone-log-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--card);
+      border-radius: 12px;
+      padding: 8px 10px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .log-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .log-text { font-size: 0.62rem; font-weight: 600; color: var(--foreground); }
+    .log-sub { font-size: 0.55rem; color: var(--muted-foreground); margin-top: 1px; }
+
+    .log-badge {
+      margin-left: auto;
+      font-size: 0.52rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 20px;
+    }
+
+    .log-badge.good { background: hsl(152, 40%, 90%); color: hsl(152, 40%, 30%); }
+    .log-badge.mild { background: hsl(48, 95%, 88%); color: hsl(38, 80%, 30%); }
+    .log-badge.moderate { background: hsl(28, 95%, 88%); color: hsl(28, 80%, 30%); }
+
+    /* ── Privacy ── */
+    .privacy-section {
+      background: var(--foreground);
+      color: var(--primary-foreground);
+      padding: 96px 0;
+    }
+
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .privacy-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .privacy-section h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+      color: hsl(36, 18%, 90%);
+      margin-bottom: 20px;
+    }
+
+    .privacy-section p {
+      font-size: 1rem;
+      color: hsl(36, 10%, 65%);
       line-height: 1.7;
-      background: #fafafa;
     }
-    h1 { font-size: 2rem; margin-bottom: 4px; }
-    h3 { margin-top: 2rem; }
-    ul { padding-left: 1.4rem; }
-    a { color: #4a6fa5; }
-    .tagline { color: #555; font-style: italic; margin-top: 0; }
-    .privacy-box {
-      background: #eef4ff;
-      border-left: 4px solid #4a6fa5;
-      padding: 12px 16px;
-      border-radius: 4px;
-      margin-top: 1rem;
+
+    .privacy-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
-    footer { margin-top: 3rem; font-size: 0.85rem; color: #888; }
+
+    .privacy-pillar {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: hsl(25, 12%, 14%);
+      border: 1px solid hsl(25, 10%, 22%);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .privacy-icon {
+      width: 40px;
+      height: 40px;
+      background: hsl(18, 60%, 20%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    .privacy-pillar-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: hsl(36, 18%, 90%);
+      margin-bottom: 4px;
+    }
+
+    .privacy-pillar-desc {
+      font-size: 0.85rem;
+      color: hsl(36, 10%, 55%);
+      line-height: 1.5;
+    }
+
+    /* ── Features ── */
+    .features-section { background: var(--background); }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+      color: var(--foreground);
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted-foreground);
+      max-width: 520px;
+      line-height: 1.65;
+      margin-bottom: 64px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 36px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .feature-number {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .feature-icon-wrap {
+      width: 52px;
+      height: 52px;
+      background: var(--accent);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      color: var(--foreground);
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      font-size: 0.93rem;
+      color: var(--muted-foreground);
+      line-height: 1.65;
+    }
+
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: var(--muted);
+      color: var(--muted-foreground);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* ── Stats ── */
+    .stats-section {
+      background: var(--accent);
+      border-top: 1px solid hsl(18, 40%, 88%);
+      border-bottom: 1px solid hsl(18, 40%, 88%);
+      padding: 64px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      color: var(--primary-dark);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted-foreground);
+      line-height: 1.4;
+    }
+
+    /* ── FAQ / GEO ── */
+    .faq-section { background: var(--secondary); }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      max-width: 760px;
+    }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--foreground);
+      text-align: left;
+      transition: background 0.15s ease;
+    }
+
+    .faq-question:hover { background: var(--muted); }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--primary);
+      transition: transform 0.22s ease;
+    }
+
+    .faq-item[open] .faq-chevron { transform: rotate(180deg); }
+
+    .faq-answer {
+      padding: 0 28px 22px;
+      font-size: 0.93rem;
+      color: var(--muted-foreground);
+      line-height: 1.7;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--foreground);
+      padding: 96px 0;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: hsl(36, 18%, 90%);
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      font-size: 1.05rem;
+      color: hsl(36, 10%, 60%);
+      margin-bottom: 40px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .apple-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: hsl(36, 18%, 90%);
+      color: var(--foreground);
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 0.95rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-elevated);
+      transition: background 0.18s ease, transform 0.18s ease;
+    }
+
+    .apple-badge:hover { background: hsl(0, 0%, 100%); }
+    .apple-badge:active { transform: scale(0.96); }
+
+    .apple-icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--foreground);
+      border-top: 1px solid hsl(25, 10%, 18%);
+      padding: 48px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: hsl(36, 18%, 90%);
+      letter-spacing: -0.03em;
+    }
+
+    .footer-logo span { color: var(--primary); }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: hsl(36, 10%, 55%);
+      margin-top: 6px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: hsl(36, 10%, 55%);
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover { color: hsl(36, 18%, 90%); }
+
+    .footer-feedback {
+      background: hsl(25, 12%, 14%);
+      border: 1px solid hsl(25, 10%, 22%);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      font-size: 0.88rem;
+      color: hsl(36, 10%, 60%);
+      line-height: 1.6;
+    }
+
+    .footer-feedback a {
+      color: var(--primary);
+      font-weight: 600;
+      transition: opacity 0.15s ease;
+    }
+
+    .footer-feedback a:hover { opacity: 0.8; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-top: 24px;
+      border-top: 1px solid hsl(25, 10%, 18%);
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: hsl(36, 10%, 40%);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-legal a {
+      font-size: 0.8rem;
+      color: hsl(36, 10%, 40%);
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .footer-legal a:hover { color: hsl(36, 18%, 75%); }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      section { padding: 64px 0; }
+
+      .hero { padding: 60px 0 48px; }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        text-align: center;
+      }
+
+      .hero-sub { max-width: 100%; }
+      .hero-actions { justify-content: center; }
+      .hero-visual { order: -1; }
+
+      .phone-mockup { width: 220px; height: 440px; }
+
+      .privacy-grid { grid-template-columns: 1fr; gap: 48px; }
+
+      .features-grid { grid-template-columns: 1fr; }
+
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+      .footer-top { flex-direction: column; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-cta { display: none; }
+    }
   </style>
 </head>
 <body>
-  <h1>Darmi</h1>
-  <p class="tagline">A simple, calm way to track IBS triggers.</p>
 
-  <p>
-    Living with IBS means second-guessing every meal.<br>
-    Was it the onions? Stress? Coffee? Nothing makes sense.
-  </p>
+  <!-- ── Navigation ── -->
+  <nav role="banner">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="nav-logo" href="/" aria-label="Darmi home">Darmi<span>.</span></a>
+        <a class="nav-cta" href="#download" aria-label="Download Darmi on the App Store">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download Free
+        </a>
+      </div>
+    </div>
+  </nav>
 
-  <p>This app helps you:</p>
-  <ul>
-    <li>Log food quickly</li>
-    <li>Record symptoms and intensity</li>
-    <li>Track mood and stress</li>
-    <li>View trends over time</li>
-    <li>Notice patterns without overthinking</li>
-  </ul>
+  <main>
 
-  <p><em>This is not medical advice. It's a private space to understand your own body. Built by someone who needed it.</em></p>
+    <!-- ── Hero ── -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Available on iOS · Free to Download
+            </div>
+            <h1 id="hero-heading">
+              Track Food &amp; Symptoms.<br />
+              <em>Understand Your Gut.</em>
+            </h1>
+            <p class="hero-sub">
+              A beautifully minimalist food and symptom diary designed for IBS. Take control of your gut health today — privately, calmly, and without any data leaving your device.
+            </p>
+            <div class="hero-actions">
+              <a class="btn-primary" href="#download" id="download" aria-label="Download Darmi on the App Store">
+                <svg class="apple-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Download on the App Store
+              </a>
+              <a class="btn-secondary" href="#features">
+                See how it works
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
 
-  <h3>Contact Us</h3>
-  <p>If you have any questions, suggestions, or need technical assistance with the app, please reach out:</p>
-  <ul>
-    <li><strong>Email:</strong> <a href="mailto:darmi.feedback@gmail.com">darmi.feedback@gmail.com</a></li>
-  </ul>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="phone-mockup" role="img" aria-label="Darmi app calendar interface showing symptom tracking">
+              <div class="phone-notch">
+                <div class="phone-notch-dot"></div>
+                <div class="phone-notch-bar"></div>
+                <div class="phone-notch-dot"></div>
+              </div>
+              <div class="phone-screen">
+                <div class="phone-header">June 2026</div>
+                <div class="phone-month">Your Gut Calendar</div>
+                <div class="phone-calendar">
+                  <div class="cal-day header">M</div><div class="cal-day header">T</div><div class="cal-day header">W</div><div class="cal-day header">T</div><div class="cal-day header">F</div><div class="cal-day header">S</div><div class="cal-day header">S</div>
+                  <div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day good">1</div><div class="cal-day good">2</div>
+                  <div class="cal-day good">3</div><div class="cal-day mild">4</div><div class="cal-day good">5</div><div class="cal-day moderate">6</div><div class="cal-day good">7</div><div class="cal-day good">8</div><div class="cal-day good">9</div>
+                  <div class="cal-day good">10</div><div class="cal-day good">11</div><div class="cal-day mild">12</div><div class="cal-day good">13</div><div class="cal-day bad">14</div><div class="cal-day mild">15</div><div class="cal-day good">16</div>
+                  <div class="cal-day good">17</div><div class="cal-day mild">18</div><div class="cal-day good">19</div><div class="cal-day good">20</div><div class="cal-day good">21</div><div class="cal-day moderate">22</div><div class="cal-day good">23</div>
+                  <div class="cal-day good">24</div><div class="cal-day good">25</div><div class="cal-day good">26</div><div class="cal-day today">27</div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div>
+                </div>
+                <div class="phone-log-item">
+                  <div class="log-dot" style="background:hsl(28,95%,52%)"></div>
+                  <div>
+                    <div class="log-text">Pasta, tomato sauce</div>
+                    <div class="log-sub">Lunch · 12:30 PM</div>
+                  </div>
+                  <div class="log-badge moderate">Moderate</div>
+                </div>
+                <div class="phone-log-item">
+                  <div class="log-dot" style="background:hsl(152,40%,42%)"></div>
+                  <div>
+                    <div class="log-text">Rice, grilled chicken</div>
+                    <div class="log-sub">Dinner · 7:15 PM</div>
+                  </div>
+                  <div class="log-badge good">No symptoms</div>
+                </div>
+                <div class="phone-log-item">
+                  <div class="log-dot" style="background:hsl(48,95%,50%)"></div>
+                  <div>
+                    <div class="log-text">Stress level: High</div>
+                    <div class="log-sub">Mood · Evening</div>
+                  </div>
+                  <div class="log-badge mild">Mild</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <h3>Privacy Policy</h3>
-  <div class="privacy-box">
-    Darmi does not collect or store any personal user data. All your data stays on your device.
-  </div>
+    <!-- ── Stats ── -->
+    <div class="stats-section" role="region" aria-label="Key facts about Darmi">
+      <div class="container">
+        <div class="stats-grid">
+          <div>
+            <div class="stat-value">100%</div>
+            <div class="stat-label">On-device storage<br />Zero cloud uploads</div>
+          </div>
+          <div>
+            <div class="stat-value">0</div>
+            <div class="stat-label">Accounts required<br />Start logging instantly</div>
+          </div>
+          <div>
+            <div class="stat-value">4</div>
+            <div class="stat-label">Core tracking pillars<br />Food, symptoms, mood, stress</div>
+          </div>
+          <div>
+            <div class="stat-value">Free</div>
+            <div class="stat-label">Available on iOS<br />No subscriptions</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <footer>Welcome to the official support page for <strong>Darmi</strong>.</footer>
+    <!-- ── Privacy ── -->
+    <section class="privacy-section" id="privacy" aria-labelledby="privacy-heading">
+      <div class="container">
+        <div class="privacy-grid">
+          <div>
+            <p class="privacy-eyebrow">Built for privacy</p>
+            <h2 id="privacy-heading">Your Gut Health is None of Our Business.</h2>
+            <p>Darmi is engineered for maximum privacy. All symptom data and dietary histories stay exclusively on your local device, requiring no account creation, no sign-in, and no connection to any external server — ever.</p>
+          </div>
+          <div class="privacy-pillars">
+            <article class="privacy-pillar">
+              <div class="privacy-icon">🔒</div>
+              <div>
+                <div class="privacy-pillar-title">100% On-Device</div>
+                <div class="privacy-pillar-desc">Every entry you log — meals, symptoms, moods — is stored locally on your iPhone using Apple's native data layer. Nothing leaves your device.</div>
+              </div>
+            </article>
+            <article class="privacy-pillar">
+              <div class="privacy-icon">🚫</div>
+              <div>
+                <div class="privacy-pillar-title">No Accounts. No Servers.</div>
+                <div class="privacy-pillar-desc">Darmi has no backend. There are no user accounts, no cloud sync, and no remote servers receiving your health data. You are not the product.</div>
+              </div>
+            </article>
+            <article class="privacy-pillar">
+              <div class="privacy-icon">👁️</div>
+              <div>
+                <div class="privacy-pillar-title">No Tracking. No Analytics.</div>
+                <div class="privacy-pillar-desc">No third-party SDKs. No advertising identifiers. No usage analytics sent anywhere. What you log in Darmi stays in Darmi — and stays yours.</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Features ── -->
+    <section class="features-section" id="features" aria-labelledby="features-heading">
+      <div class="container">
+        <p class="section-eyebrow">Core Features</p>
+        <h2 class="section-title" id="features-heading">Everything your gut needs.<br />Nothing it doesn't.</h2>
+        <p class="section-sub">Darmi maps your food, symptoms, and patterns — so you stop guessing and start understanding your body.</p>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-number">01</div>
+            <div class="feature-icon-wrap" aria-hidden="true">⚡</div>
+            <h3>Log Meals &amp; Symptoms In Seconds.</h3>
+            <p>Darmi is built for speed. Quick-pick shortcuts let you log common foods and daily meals in a single tap. No typing, no friction — just fast, consistent tracking that you'll actually stick to when you're symptomatic.</p>
+            <div class="feature-tags">
+              <span class="tag">Quick-log shortcuts</span>
+              <span class="tag">Meal templates</span>
+              <span class="tag">Symptom intensity</span>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-number">02</div>
+            <div class="feature-icon-wrap" aria-hidden="true">🎯</div>
+            <h3>Avoid Triggers. Find Your Safe Foods.</h3>
+            <p>Darmi's trigger analysis identifies which exact foods appear most frequently before discomfort occurs. Over time, patterns emerge — helping you build a personal list of safe foods and known triggers specific to your gut.</p>
+            <div class="feature-tags">
+              <span class="tag">Trigger identification</span>
+              <span class="tag">Safe food list</span>
+              <span class="tag">Pain correlation</span>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-number">03</div>
+            <div class="feature-icon-wrap" aria-hidden="true">📊</div>
+            <h3>Understand Your Body's Unique Patterns.</h3>
+            <p>Track symptom percentage changes across 7-day, 14-day, and 30-day periods. Darmi's intelligent insights surface key findings from your data — things like stress spikes before flare-ups, or foods that consistently correlate with calm days.</p>
+            <div class="feature-tags">
+              <span class="tag">7d / 14d / 30d trends</span>
+              <span class="tag">Key findings</span>
+              <span class="tag">Gut calendar</span>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-number">04</div>
+            <div class="feature-icon-wrap" aria-hidden="true">🩺</div>
+            <h3>Bring Better Data To Your Doctor.</h3>
+            <p>Stop trying to remember what you ate three weeks ago during an appointment. Darmi generates structured, exportable chronological history logs you can share directly during medical consultations — giving your doctor the context they need.</p>
+            <div class="feature-tags">
+              <span class="tag">Export reports</span>
+              <span class="tag">Chronological log</span>
+              <span class="tag">Doctor-ready format</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ / GEO Section ── -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <p class="section-eyebrow">Common Questions</p>
+        <h2 class="section-title" id="faq-heading">Questions about Darmi</h2>
+        <p class="section-sub">Straight answers to what people ask AI engines and search about IBS tracking apps.</p>
+
+        <div class="faq-list" role="list">
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              What is Darmi and what does it do?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">Darmi is a private, on-device food and symptom diary designed for people living with IBS (Irritable Bowel Syndrome). It lets users log meals, record symptom intensity, track mood and stress levels, and identify gut triggers over time — all without creating an account or sending data to any server.</p>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              Is Darmi really private? Does it collect any data?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">Yes, completely. Darmi does not collect or store any personal user data. All symptom logs, food entries, and health records stay exclusively on the user's device. There are no accounts, no cloud sync, no analytics SDKs, and no servers receiving your data. This is a core design principle, not a setting you toggle.</p>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              How does Darmi help identify IBS food triggers?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">Darmi analyzes your logged meals and symptom events to identify which foods appear most frequently before discomfort occurs. Over 7, 14, and 30-day periods, patterns surface: you can see symptom percentage changes and correlate them with specific foods, stress events, or time-of-day patterns unique to your gut.</p>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              Can I export my symptom history to share with my doctor?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">Yes. Darmi generates structured, chronological export reports of your symptom and dietary history that you can share directly during medical consultations. This gives your gastroenterologist or GP the complete, organized context they need — instead of relying on memory at the appointment.</p>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              What platforms is Darmi available on?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">Darmi is currently available on iOS (iPhone). It is free to download from the App Store. No subscription is required to use the core tracking features.</p>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              What is the best app for tracking IBS symptoms and food triggers?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">Darmi is designed specifically for IBS tracking with a focus on privacy, speed, and pattern recognition. Unlike many health apps, Darmi stores all data locally on the device — making it particularly suitable for users who want a private IBS log without their sensitive health data being uploaded to a cloud service or shared with third parties.</p>
+          </details>
+
+          <details class="faq-item" role="listitem">
+            <summary class="faq-question">
+              Does Darmi provide medical advice?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">No. Darmi is not a medical device and does not provide medical advice. It is a personal tracking tool that helps you observe patterns in your own dietary and symptom data. Always consult a qualified healthcare professional for diagnosis, treatment, or medical guidance related to IBS or any other condition.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Download CTA ── -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading">Start understanding your gut today.</h2>
+        <p>Private. Local. Free. Built by someone who needed it.</p>
+        <a class="apple-badge" href="#download" aria-label="Download Darmi on the App Store">
+          <svg class="apple-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Download on the App Store
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <div class="footer-logo">Darmi<span>.</span></div>
+            <div class="footer-tagline">A private space to understand your own body.</div>
+          </div>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="#features">Features</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#faq">FAQ</a>
+            <a href="mailto:darmi.feedback@gmail.com">Contact</a>
+          </nav>
+        </div>
+
+        <div class="footer-feedback" lang="es">
+          ¿Qué opinas de Darmi? Leemos todas las reseñas. Si tienes alguna sugerencia, comentario o necesitas ayuda, escríbenos a <a href="mailto:darmi.feedback@gmail.com">darmi.feedback@gmail.com</a>
+        </div>
+
+        <div class="footer-bottom">
+          <span class="footer-copy">© 2026 Darmi. Not medical advice.</span>
+          <nav class="footer-legal" aria-label="Legal links">
+            <a href="#privacy-policy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
