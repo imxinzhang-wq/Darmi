@@ -377,6 +377,22 @@
     .log-badge.mild { background: hsl(48, 95%, 88%); color: hsl(38, 80%, 30%); }
     .log-badge.moderate { background: hsl(28, 95%, 88%); color: hsl(28, 80%, 30%); }
 
+    /* ── Cover ── */
+    .cover-strip {
+      width: 100%;
+      max-height: 520px;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .cover-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
     /* ── Stats ── */
     .stats-section {
       background: var(--background);
@@ -961,6 +977,11 @@
         </div>
       </div>
     </section>
+
+    <!-- ── Cover Photo ── -->
+    <div class="cover-strip" role="img" aria-label="Person holding an iPhone showing the Darmi app in a park">
+      <img src="screenshots/cover.png" alt="Darmi app on iPhone held outdoors in a park setting" />
+    </div>
 
     <!-- ── Stats ── -->
     <div class="stats-section" role="region" aria-label="Key facts about Darmi">
