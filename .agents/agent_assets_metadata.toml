@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "TOGMOm4pRlSW06n8ubyfW"
+uri = "file://artifacts/mockup-sandbox/public/images/darmi-phone-mockup-centered.png"
+type = "image"
+title = "minimalist phone mockup gut calendar"
+
+[[generated]]
+id = "m0S75XI-Wdt7N3dBM2ghe"
+uri = "file://artifacts/mockup-sandbox/public/images/darmi-phone-bento.png"
+type = "image"
+title = "iphone mockup with color coded calendar"
+
+[[generated]]
+id = "xgpx87pZIIhVW26zEbuL6"
+uri = "file://artifacts/mockup-sandbox/public/images/darmi-hero-phone.png"
+type = "image"
+title = "Minimal phone calendar mockup"
+
+[[generated]]
+id = "uqMYrRmTvVZak0cvEJ4ag"
+uri = "file://artifacts/mockup-sandbox/public/images/darmi-triggers.png"
+type = "image"
+title = "Food trigger list UI"
+
+[[generated]]
+id = "OCLNhZs5A6RXsPeaHBFer"
+uri = "file://artifacts/mockup-sandbox/public/images/darmi-data.png"
+type = "image"
+title = "Health data chart UI"
