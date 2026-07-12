@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Darmi</title>
+  <meta name="description" content="Darmi Privacy Policy. All your health data stays on your device. No accounts, no cloud, no ads." />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg: #F6F2EC;
+      --fg: #251D16;
+      --coral: #D98A68;
+      --coral-dark: #C06A3D;
+      --muted: #8A8178;
+      --border: rgba(37,29,22,.10);
+    }
+
+    body {
+      font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(246,242,236,.82);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .nav-logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: var(--coral);
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--fg);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-link {
+      font-size: 14px;
+      color: var(--fg);
+      opacity: .68;
+      font-weight: 500;
+      transition: opacity .15s;
+    }
+
+    .nav-link:hover { opacity: 1; }
+
+    .btn-dark {
+      background: var(--fg);
+      color: #F6F2EC;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 600;
+      transition: opacity .15s, transform .15s;
+    }
+
+    .btn-dark:hover { opacity: .85; }
+    .btn-dark:active { transform: scale(.96); }
+
+    /* ── Page content ── */
+    .page-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 48px 100px;
+    }
+
+    .page-eyebrow {
+      font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--coral-dark);
+      margin-bottom: 12px;
+    }
+
+    .page-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      color: var(--fg);
+    }
+
+    .page-meta {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    .policy-section {
+      margin-bottom: 44px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .section-num {
+      font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+      font-size: 11.5px;
+      color: var(--muted);
+      flex-shrink: 0;
+      padding-top: 3px;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+    }
+
+    .policy-body {
+      padding-left: 36px;
+    }
+
+    .policy-body p {
+      font-size: 15px;
+      color: var(--fg);
+      opacity: .82;
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+
+    .policy-body p:last-child { margin-bottom: 0; }
+
+    .policy-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .policy-body li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 15px;
+      color: var(--fg);
+      opacity: .82;
+      line-height: 1.6;
+    }
+
+    .policy-body li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--coral);
+      flex-shrink: 0;
+      margin-top: 9px;
+    }
+
+    .policy-body a {
+      color: var(--coral-dark);
+      text-decoration: underline;
+      text-decoration-color: rgba(192,106,61,.3);
+      text-underline-offset: 3px;
+      transition: text-decoration-color .15s;
+    }
+
+    .policy-body a:hover {
+      text-decoration-color: var(--coral-dark);
+    }
+
+    .inline-badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(217,138,104,.15);
+      color: var(--coral-dark);
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 36px 48px;
+      border-top: 1px solid rgba(37,29,22,.07);
+      background: var(--fg);
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      transition: color .15s;
+    }
+
+    .footer-links a:hover { color: #F6F2EC; }
+
+    .footer-store {
+      color: var(--coral) !important;
+      font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      .nav-inner { padding: 14px 24px; }
+      .page-wrap { padding: 60px 24px 80px; }
+      footer { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-inner">
+      <a class="nav-logo" href="/" aria-label="Darmi home">
+        <div class="nav-logo-mark"></div>
+        <span class="nav-logo-text">Darmi</span>
+      </a>
+      <div class="nav-right">
+        <a class="nav-link" href="/#faq">FAQ</a>
+        <a class="btn-dark" href="https://apps.apple.com/us/app/darmi-ibs-food-symptom-tracker/id6759197247">Download</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-wrap">
+      <div class="page-eyebrow">Legal</div>
+      <h1 class="page-title">Privacy Policy</h1>
+      <p class="page-meta">Effective date: July 12, 2026</p>
+
+      <hr class="divider" />
+
+      <div class="policy-section">
+        <div class="section-header">
+          <span class="section-num">01</span>
+          <h2 class="section-title">Data Storage</h2>
+        </div>
+        <div class="policy-body">
+          <ul>
+            <li>All data (meals, symptoms, notes) is stored only on your device — mobile apps use the local database; browsers use IndexedDB.</li>
+            <li>We do not collect, store, or transmit your personal health information to our servers.</li>
+            <li><span class="inline-badge">Free</span> and <span class="inline-badge">PRO</span> users can store unlimited records on this device.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="section-header">
+          <span class="section-num">02</span>
+          <h2 class="section-title">Data Export</h2>
+        </div>
+        <div class="policy-body">
+          <ul>
+            <li>Export your data as PDF for healthcare providers or personal records.</li>
+            <li><span class="inline-badge">Free</span> users: up to 1 export per calendar month (resets on the 1st). <span class="inline-badge">PRO</span>: unlimited. Quota is tracked locally.</li>
+            <li>Exported files are created on your device; sharing them is under your control.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="section-header">
+          <span class="section-num">03</span>
+          <h2 class="section-title">No Accounts, No Cloud Sync</h2>
+        </div>
+        <div class="policy-body">
+          <ul>
+            <li>No registration or login required.</li>
+            <li>No cloud backup or sync in this version.</li>
+            <li>Future versions may offer optional cloud sync with clear opt-in consent.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="section-header">
+          <span class="section-num">04</span>
+          <h2 class="section-title">Third-Party Services</h2>
+        </div>
+        <div class="policy-body">
+          <ul>
+            <li>No advertising SDKs. May collect anonymous usage events (e.g. button taps, feature counts) to improve quality — never meal content, symptom details, or health text.</li>
+            <li>Emailed feedback may include basic technical info (app version, device, browser, locale, timestamp) for debugging, sent only if you email us.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="section-header">
+          <span class="section-num">05</span>
+          <h2 class="section-title">Data Security</h2>
+        </div>
+        <div class="policy-body">
+          <ul>
+            <li>Protected by your device's security (lock screen, encryption).</li>
+            <li>App data is sandboxed from other sites and apps.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="section-header">
+          <span class="section-num">06</span>
+          <h2 class="section-title">Your Rights</h2>
+        </div>
+        <div class="policy-body">
+          <ul>
+            <li>Nothing to delete on our side — we don't hold your data.</li>
+            <li>Delete all data anytime by clearing app storage or uninstalling the app.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="section-header">
+          <span class="section-num">07</span>
+          <h2 class="section-title">Children's Privacy</h2>
+        </div>
+        <div class="policy-body">
+          <p>Darmi is not intended for children under 13. We do not knowingly collect data from children under 13.</p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="section-header">
+          <span class="section-num">08</span>
+          <h2 class="section-title">Changes to This Policy</h2>
+        </div>
+        <div class="policy-body">
+          <p>This policy may be updated from time to time. The effective date above will reflect any changes. Significant updates will be communicated within the app.</p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="section-header">
+          <span class="section-num">09</span>
+          <h2 class="section-title">Contact</h2>
+        </div>
+        <div class="policy-body">
+          <p>Questions about this policy? Reach us at <a href="mailto:darmi.feedback@gmail.com">darmi.feedback@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Darmi. Not a substitute for professional medical advice.</span>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="/#faq">FAQ</a>
+        <a href="mailto:darmi.feedback@gmail.com">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://apps.apple.com/us/app/darmi-ibs-food-symptom-tracker/id6759197247" class="footer-store">App Store ↗</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
