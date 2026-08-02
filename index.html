@@ -6,8 +6,9 @@
 
   <title>Darmi — IBS Tracker App. Find Your Triggers Without the Guesswork.</title>
   <meta name="description" content="Darmi turns your meals and symptoms into patterns you can actually see — and data you can bring to your doctor. 100% on-device. No accounts. No servers. Free on iOS." />
-  <meta name="keywords" content="IBS tracker, food symptom diary, identify gut triggers, private IBS log, doctor export symptom report, gut health calendar, irritable bowel syndrome app, food intolerance tracker" />
+  <meta name="keywords" content="IBS tracker, privacy-first IBS tracker, no signup symptom log, food symptom diary, identify gut triggers, private IBS log, IBS-C tracker, IBS-D tracker, IBS-M tracker, Bristol Stool Scale app, doctor export symptom report, gut health calendar, irritable bowel syndrome app, food intolerance tracker" />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#F6F2EC" />
   <link rel="canonical" href="https://darmi.app/" />
 
   <meta property="og:type" content="website" />
@@ -15,36 +16,96 @@
   <meta property="og:description" content="Darmi turns your meals and symptoms into patterns you can actually see — and data you can bring to your doctor. Free on iOS." />
   <meta property="og:url" content="https://darmi.app/" />
   <meta property="og:site_name" content="Darmi" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://darmi.app/screenshots/cover.png" />
+  <meta property="og:image:width" content="1198" />
+  <meta property="og:image:height" content="600" />
+  <meta property="og:image:alt" content="Person holding an iPhone running Darmi, a private IBS food and symptom tracker" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Darmi — IBS Food & Symptom Tracker. Private. Local. Free." />
   <meta name="twitter:description" content="Track food, symptoms, mood and stress for IBS. All data stays on your device. Available on iOS." />
+  <meta name="twitter:image" content="https://darmi.app/screenshots/cover.png" />
+  <meta name="twitter:image:alt" content="Person holding an iPhone running Darmi, a private IBS food and symptom tracker" />
 
+  <!--
+    App Store rating below is a manual snapshot: 4.7 stars / 18 ratings, captured 2026-08-02.
+    Re-check and update ratingValue + ratingCount (and the visible .hero-rating line in the
+    hero) whenever a new app version ships, so the markup keeps matching the App Store.
+  -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    "name": "Darmi",
-    "alternateName": "Darmi IBS Tracker",
-    "description": "Darmi is a private, on-device food and symptom diary designed for people living with IBS. It helps users log meals, record symptom intensity, track mood and stress, identify gut triggers, and export structured chronological health data for medical consultations.",
-    "applicationCategory": "HealthApplication",
-    "operatingSystem": "iOS",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "url": "https://apps.apple.com/us/app/darmi-ibs-food-symptom-tracker/id6759197247",
-    "publisher": { "@type": "Organization", "name": "Darmi", "email": "darmi.feedback@gmail.com" }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"What does Darmi track?","acceptedAnswer":{"@type":"Answer","text":"Darmi tracks the meals you eat and the digestive symptoms you experience, timestamped so you can see the relationship between the two over time."}},
-      {"@type":"Question","name":"How does Darmi help identify IBS trigger foods?","acceptedAnswer":{"@type":"Answer","text":"Darmi analyzes the foods logged in the hours before each symptom entry and highlights which foods show up most frequently across multiple episodes, rather than relying on memory alone."}},
-      {"@type":"Question","name":"Is Darmi a medical diagnosis tool?","acceptedAnswer":{"@type":"Answer","text":"No. Darmi is a tracking and pattern-analysis app, not a diagnostic or medical device. It's designed to help you organize information to discuss with a healthcare provider."}},
-      {"@type":"Question","name":"Can I export my Darmi data to share with a doctor?","acceptedAnswer":{"@type":"Answer","text":"Yes. Darmi keeps a chronological log of your entries that can be exported and shared during medical consultations."}},
-      {"@type":"Question","name":"How long does it take to log a meal in Darmi?","acceptedAnswer":{"@type":"Answer","text":"Most entries take a few seconds using Darmi's quick-pick shortcuts for saved meals and daily staples."}},
-      {"@type":"Question","name":"Does Darmi work for conditions other than IBS?","acceptedAnswer":{"@type":"Answer","text":"Darmi is built primarily for IBS, but its food-and-symptom tracking approach can support anyone trying to identify dietary triggers for digestive discomfort."}}
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://darmi.app/#organization",
+        "name": "Darmi",
+        "url": "https://darmi.app/",
+        "logo": "https://darmi.app/logo.png",
+        "email": "darmi.feedback@gmail.com",
+        "sameAs": ["https://apps.apple.com/us/app/darmi-ibs-food-symptom-tracker/id6759197247"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://darmi.app/#website",
+        "name": "Darmi",
+        "url": "https://darmi.app/",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://darmi.app/#organization" }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://darmi.app/#app",
+        "name": "Darmi",
+        "alternateName": ["Darmi IBS Tracker", "Darmi IBS Food & Symptom Tracker"],
+        "description": "Darmi is a privacy-first, on-device food and symptom diary designed for people living with IBS. There is no account to create and no server: it helps users log meals, record symptom intensity, track stool type on the Bristol Stool Scale, track mood and stress, identify gut triggers, and export structured chronological health data for medical consultations. Suitable for people tracking IBS-C, IBS-D and IBS-M.",
+        "applicationCategory": "HealthApplication",
+        "applicationSubCategory": "Symptom Tracker",
+        "operatingSystem": "iOS",
+        "url": "https://darmi.app/",
+        "installUrl": "https://apps.apple.com/us/app/darmi-ibs-food-symptom-tracker/id6759197247",
+        "sameAs": ["https://apps.apple.com/us/app/darmi-ibs-food-symptom-tracker/id6759197247"],
+        "screenshot": "https://darmi.app/screenshots/cover.png",
+        "inLanguage": ["en", "de", "zh-Hans", "zh-Hant", "ja", "fr", "es", "pt"],
+        "featureList": [
+          "One-tap Quick Picks that learn your most-logged foods",
+          "Bristol Stool Scale, symptom intensity, mood and stress in one flow",
+          "Automatic analysis of foods logged before symptom onset",
+          "Symptom trends over 7, 14 and 30-day windows",
+          "Exportable chronological history to share with a doctor",
+          "100% on-device storage — no account, no cloud sync"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free to download and use, with an optional PRO in-app purchase that unlocks unlimited data exports."
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "ratingCount": 18,
+          "bestRating": 5,
+          "worstRating": 1
+        },
+        "publisher": { "@id": "https://darmi.app/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://darmi.app/#faq",
+        "mainEntity": [
+          {"@type":"Question","name":"What does Darmi track?","acceptedAnswer":{"@type":"Answer","text":"Darmi tracks the meals you eat and the digestive symptoms you experience, timestamped so you can see the relationship between the two over time."}},
+          {"@type":"Question","name":"How does Darmi help identify IBS trigger foods?","acceptedAnswer":{"@type":"Answer","text":"Darmi analyzes the foods logged in the hours before each symptom entry and highlights which foods show up most frequently across multiple episodes, rather than relying on memory alone."}},
+          {"@type":"Question","name":"Is Darmi a medical diagnosis tool?","acceptedAnswer":{"@type":"Answer","text":"No. Darmi is a tracking and pattern-analysis app, not a diagnostic or medical device. It's designed to help you organize information to discuss with a healthcare provider."}},
+          {"@type":"Question","name":"Can I export my Darmi data to share with a doctor?","acceptedAnswer":{"@type":"Answer","text":"Yes. Darmi keeps a chronological log of your entries that can be exported and shared during medical consultations."}},
+          {"@type":"Question","name":"How long does it take to log a meal in Darmi?","acceptedAnswer":{"@type":"Answer","text":"Most entries take a few seconds using Darmi's quick-pick shortcuts for saved meals and daily staples."}},
+          {"@type":"Question","name":"Do I need an account to use Darmi?","acceptedAnswer":{"@type":"Answer","text":"No. Darmi has no sign-up, no login and no server. Your meals, symptoms and notes are stored only on your own device, and the app works fully offline."}},
+          {"@type":"Question","name":"Is Darmi free?","acceptedAnswer":{"@type":"Answer","text":"Darmi is free to download and free to use for everyday logging and pattern analysis. An optional PRO in-app purchase unlocks unlimited data exports; free users can export once per calendar month."}},
+          {"@type":"Question","name":"Does Darmi work for conditions other than IBS?","acceptedAnswer":{"@type":"Answer","text":"Darmi is built primarily for IBS — including IBS-C, IBS-D and IBS-M — but its food-and-symptom tracking approach can support anyone trying to identify dietary triggers for digestive discomfort."}},
+          {"@type":"Question","name":"What languages does Darmi support?","acceptedAnswer":{"@type":"Answer","text":"Darmi is available in 8 languages: English, Deutsch, 简体中文, 繁體中文, 日本語, Français, Español, and Português."}}
+        ]
+      }
     ]
   }
   </script>
@@ -202,6 +263,31 @@
     }
 
     .btn-coral:active { transform: scale(.96); }
+
+    /* Visible App Store rating — must stay in sync with the aggregateRating JSON-LD above. */
+    .hero-rating {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 18px;
+      font-size: 14.5px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    /* Keep the stars on the first text line when the label wraps on narrow screens. */
+    .hero-rating .stars {
+      display: inline-flex;
+      gap: 1px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      color: var(--coral);
+    }
+
+    .hero-rating strong {
+      color: var(--fg);
+      font-weight: 700;
+    }
 
     .hero-image {
       margin-top: 56px;
@@ -628,11 +714,21 @@
     <section aria-labelledby="hero-heading">
       <div class="hero">
         <h1 id="hero-heading">Find Your IBS Triggers Without the Guesswork</h1>
-        <p class="hero-sub">A clean, minimal tracker that turns your meals and symptoms into patterns you can actually see and data you can bring to your doctor.</p>
+        <p class="hero-sub">A privacy-first IBS tracker that turns your meals and symptoms into patterns you can actually see — and data you can bring to your doctor. No account, no sign-up, no cloud: everything stays on your device.</p>
         <a class="btn-coral" href="https://apps.apple.com/us/app/darmi-ibs-food-symptom-tracker/id6759197247">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
           Download on the App Store
         </a>
+        <p class="hero-rating">
+          <span class="stars" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.35 6.19 20.4l1.11-6.47L2.6 9.35l6.5-.95z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.35 6.19 20.4l1.11-6.47L2.6 9.35l6.5-.95z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.35 6.19 20.4l1.11-6.47L2.6 9.35l6.5-.95z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.35 6.19 20.4l1.11-6.47L2.6 9.35l6.5-.95z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="url(#star-partial)"><defs><linearGradient id="star-partial"><stop offset="70%" stop-color="currentColor"/><stop offset="70%" stop-color="currentColor" stop-opacity=".28"/></linearGradient></defs><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.35 6.19 20.4l1.11-6.47L2.6 9.35l6.5-.95z"/></svg>
+          </span>
+          <span><strong>4.7</strong> from 18 ratings on the App Store</span>
+        </p>
       </div>
       <div class="hero-image-wrap">
         <img src="screenshots/cover.png" alt="Person holding an iPhone with Darmi app in a park" style="width:100%;border-radius:28px;aspect-ratio:16/8.2;object-fit:cover;object-position:center 30%;box-shadow:0 40px 90px -24px rgba(37,29,22,.28);" />
@@ -658,11 +754,11 @@
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Track symptoms, stool type (Bristol Stool Scale) and stress in one quick flow
+              Track symptoms, stool type (Bristol Stool Scale) and stress in one quick flow — suitable for IBS-C, IBS-D and IBS-M
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Works offline — your data stays private on your device
+              No account required — no sign-up, no login, no server; works offline and your data stays on your device
             </li>
           </ul>
         </div>
@@ -829,10 +925,26 @@
 
         <div class="faq-item" role="group">
           <button class="faq-btn" aria-expanded="false">
+            <span class="faq-q">Do I need an account to use Darmi?</span>
+            <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <p class="faq-answer">No. Darmi has no sign-up, no login and no server. Your meals, symptoms and notes are stored only on your own device, and the app works fully offline.</p>
+        </div>
+
+        <div class="faq-item" role="group">
+          <button class="faq-btn" aria-expanded="false">
+            <span class="faq-q">Is Darmi free?</span>
+            <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <p class="faq-answer">Darmi is free to download and free to use for everyday logging and pattern analysis. An optional PRO in-app purchase unlocks unlimited data exports; free users can export once per calendar month.</p>
+        </div>
+
+        <div class="faq-item" role="group">
+          <button class="faq-btn" aria-expanded="false">
             <span class="faq-q">Does Darmi work for conditions other than IBS?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Darmi is built primarily for IBS, but its food-and-symptom tracking approach can support anyone trying to identify dietary triggers for digestive discomfort.</p>
+          <p class="faq-answer">Darmi is built primarily for IBS — including IBS-C, IBS-D and IBS-M — but its food-and-symptom tracking approach can support anyone trying to identify dietary triggers for digestive discomfort.</p>
         </div>
 
         <div class="faq-item" role="group">

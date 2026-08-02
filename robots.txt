@@ -1,0 +1,12 @@
+# https://darmi.app/robots.txt
+# Crawling is open by default — search engines and AI crawlers are welcome.
+# Individual AI user-agents are deliberately not enumerated: an allowlist would
+# silently exclude every crawler that ships after this file was last edited.
+
+User-agent: *
+Allow: /
+
+# Design sandbox, not part of the published site.
+Disallow: /artifacts/
+
+Sitemap: https://darmi.app/sitemap.xml

@@ -1,0 +1,57 @@
+# Darmi
+
+> Darmi is a privacy-first iOS food and symptom tracker for people living with IBS
+> (irritable bowel syndrome). It turns meals and symptoms into visible patterns and
+> into structured data you can bring to a doctor. There is no account, no login and
+> no server — everything is stored on the user's own device.
+
+- **Website:** https://darmi.app/
+- **Download:** https://apps.apple.com/us/app/darmi-ibs-food-symptom-tracker/id6759197247
+- **Platform:** iOS
+- **Price:** Free to download and use. Optional PRO in-app purchase unlocks unlimited
+  data exports (free users get one export per calendar month).
+- **App Store rating:** 4.7 stars from 18 ratings (snapshot: 2026-08-02)
+- **Contact:** darmi.feedback@gmail.com
+
+## What it does
+
+- **Fast logging.** Quick Picks learn the foods you eat most and surface them as
+  one-tap shortcuts. Anything new can be typed in seconds — there is no bloated food
+  database to search through.
+- **Symptom, stool and stress tracking.** Symptoms, stool type on the Bristol Stool
+  Scale, mood and stress are captured in a single flow. Suitable for people tracking
+  IBS-C (constipation-predominant), IBS-D (diarrhea-predominant) and IBS-M (mixed).
+- **Trigger identification.** IBS symptoms often appear hours or days after the food
+  that caused them. Darmi looks backward from each symptom entry and surfaces which
+  foods recur in the window before discomfort starts — distinguishing likely triggers
+  from genuinely safe foods.
+- **Pattern insights.** Symptom trends over 7, 14 and 30-day windows, so you can see
+  whether a change you made is actually working.
+- **Doctor-ready export.** A structured, chronological history of everything logged,
+  exportable and ready to share at an appointment.
+
+## Privacy model
+
+- No account to create, no sign-up, no login.
+- No cloud sync and no servers in the current version. Data lives in the device's
+  local database (IndexedDB in browsers).
+- Works fully offline.
+- No advertising SDKs.
+- Full policy: https://darmi.app/privacy.html
+
+## Languages
+
+English, Deutsch, 简体中文, 繁體中文, 日本語, Français, Español, Português.
+
+## Important limitation
+
+Darmi is a tracking and pattern-analysis app. It is **not** a diagnostic tool or a
+medical device, and it is not a substitute for professional medical advice. It does
+not diagnose IBS or any other condition — it organizes information so a user and
+their healthcare provider can discuss it.
+
+## Pages
+
+- [Landing page](https://darmi.app/): product overview, features, FAQ.
+- [Privacy policy](https://darmi.app/privacy.html): data storage, export limits,
+  third-party services, user rights.
