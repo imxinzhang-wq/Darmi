@@ -8,27 +8,50 @@
 - **Website:** https://darmi.app/
 - **Download:** https://apps.apple.com/us/app/darmi-ibs-food-symptom-tracker/id6759197247
 - **Platform:** iOS
-- **Price:** Free to download and use. Optional PRO in-app purchase unlocks unlimited
-  data exports (free users get one export per calendar month).
+- **Price:** Freemium. Free to download and free to use; an optional Pro upgrade is
+  available as a monthly, yearly or lifetime in-app purchase. See "Free vs Pro" below.
 - **App Store rating:** 4.7 stars from 18 ratings (snapshot: 2026-08-02)
 - **Contact:** darmi.feedback@gmail.com
+
+## What it tracks
+
+Four entry types, and only these four: **meals, symptoms, stool type, and stress.**
+Stool is recorded on the Bristol Stool Scale and feeds the analysis directly (types 1–2
+read as constipation, types 6–7 as diarrhea). Darmi does **not** track mood.
 
 ## What it does
 
 - **Fast logging.** Quick Picks learn the foods you eat most and surface them as
   one-tap shortcuts. Anything new can be typed in seconds — there is no bloated food
-  database to search through.
+  database to search through. Swipe any entry to delete it.
 - **Symptom, stool and stress tracking.** Symptoms, stool type on the Bristol Stool
-  Scale, mood and stress are captured in a single flow. Suitable for people tracking
+  Scale and stress are captured in a single flow. Suitable for people tracking
   IBS-C (constipation-predominant), IBS-D (diarrhea-predominant) and IBS-M (mixed).
 - **Trigger identification.** IBS symptoms often appear hours or days after the food
-  that caused them. Darmi looks backward from each symptom entry and surfaces which
-  foods recur in the window before discomfort starts — distinguishing likely triggers
-  from genuinely safe foods.
-- **Pattern insights.** Symptom trends over 7, 14 and 30-day windows, so you can see
-  whether a change you made is actually working.
-- **Doctor-ready export.** A structured, chronological history of everything logged,
-  exportable and ready to share at an appointment.
+  that caused them. The Key Findings on the home screen work at the level of whole
+  days: they compare how often a food appears on days with symptoms against how often
+  it appears on days without, so a food has to recur on the bad days to surface.
+  Separately, opening an individual symptom shows what was eaten in the six hours
+  before it started; the same six-hour window backs the Tolerated Foods list.
+- **Pattern insights.** Symptom trends over a rolling 7-day window on the free tier,
+  extending to 14 and 30-day windows with Pro, so you can see whether a change you
+  made is actually working.
+- **Calendar view.** A month view of everything logged, at a glance.
+- **Streak feedback.** Encouraging cards when you keep a logging streak going.
+- **Doctor-ready export.** A structured, chronological PDF history of everything
+  logged, ready to share at an appointment.
+
+## Free vs Pro
+
+Free tier includes unlimited logging of all four entry types, the 7-day insight
+window, and one PDF export per calendar month.
+
+The optional Pro upgrade (monthly, yearly or lifetime in-app purchase) unlocks:
+
+1. Unlimited PDF exports (free tier is capped at one per calendar month).
+2. The 14-day and 30-day insight windows.
+3. The full set of Key Findings and Tolerated Foods entries — some are locked on free.
+4. Custom symptoms.
 
 ## Privacy model
 
