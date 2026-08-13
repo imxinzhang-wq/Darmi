@@ -10,7 +10,6 @@
 - **Platform:** iOS
 - **Price:** Freemium. Free to download and free to use; an optional Pro upgrade is
   available as a monthly, yearly or lifetime in-app purchase. See "Free vs Pro" below.
-- **App Store rating:** 4.7 stars from 18 ratings (snapshot: 2026-08-02)
 - **Contact:** darmi.feedback@gmail.com
 
 ## What it tracks
@@ -56,8 +55,7 @@ The optional Pro upgrade (monthly, yearly or lifetime in-app purchase) unlocks:
 ## Privacy model
 
 - No account to create, no sign-up, no login.
-- No cloud sync and no servers in the current version. Data lives in the device's
-  local database (IndexedDB in browsers).
+- No cloud sync and no servers in the current version. Data is stored locally on the user’s device.
 - Works fully offline.
 - No advertising SDKs.
 - Full policy: https://darmi.app/privacy.html
@@ -75,6 +73,10 @@ their healthcare provider can discuss it.
 
 ## Pages
 
-- [Landing page](https://darmi.app/): product overview, features, FAQ.
+- [English landing page](https://darmi.app/): product overview, features, FAQ.
+- [German landing page](https://darmi.app/de/): German product overview, features, FAQ.
+- [Japanese landing page](https://darmi.app/ja/): Japanese product overview, features, FAQ.
+- [Simplified Chinese landing page](https://darmi.app/zh/): Simplified Chinese product overview, features, FAQ.
+- [Traditional Chinese landing page](https://darmi.app/zh-hant/): Traditional Chinese product overview, features, FAQ.
 - [Privacy policy](https://darmi.app/privacy.html): data storage, export limits,
   third-party services, user rights.
