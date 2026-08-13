@@ -98,6 +98,8 @@
       ],
       "featureList": [
         "自動學習的快速選擇，快速完成記錄",
+        "可為餐點加上照片，照片與其他資料一樣只保存在裝置上",
+        "可從主畫面小工具快速開始記錄餐點或症狀",
         "一次記錄飲食、症狀、排便類型與壓力",
         "比較有症狀與無症狀的日子，呈現可能的食物誘因",
         "每次症狀可回顧前六小時的飲食",
@@ -125,7 +127,7 @@
           "name": "Darmi 可以記錄什麼？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Darmi 記錄飲食、症狀、布里斯托糞便分類法中的排便類型與壓力。每條記錄都有時間，便於觀察飲食與身體感受隨時間的關聯。"
+            "text": "Darmi 記錄飲食、症狀、布里斯托糞便分類法中的排便類型與壓力。每筆記錄都有時間，便於觀察飲食與身體感受隨時間的關聯。"
           }
         },
         {
@@ -157,7 +159,7 @@
           "name": "記錄一餐需要多久？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "借助已保存飲食和常吃食物的快速選擇，大多數記錄只需幾秒。"
+            "text": "透過已儲存餐點和常吃食物的快速選擇，大多數記錄只需幾秒。"
           }
         },
         {
@@ -186,10 +188,10 @@
         },
         {
           "@type": "Question",
-          "name": "Darmi 支持哪些語言？",
+          "name": "Darmi 支援哪些語言？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Darmi 支持 8 種語言：English、Deutsch、簡體中文、繁體中文、日本語、Français、Español 和 Português。"
+            "text": "Darmi 支援 8 種語言：English、Deutsch、簡體中文、繁體中文、日本語、Français、Español 和 Português。"
           }
         }
       ]
@@ -784,7 +786,7 @@
             <a href="/" lang="en">English</a>
             <a href="/de/" lang="de">Deutsch</a>
             <a href="/ja/" lang="ja">日本語</a>
-            <a href="/zh/" lang="zh-Hans">簡体中文</a>
+            <a href="/zh/" lang="zh-Hans">簡體中文</a>
             <a href="/zh-hant/" lang="zh-Hant" aria-current="page">繁體中文</a>
           </nav>
         </details>
@@ -825,15 +827,23 @@
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              新食物幾秒即可輸入，無需搜尋資料庫；輸错可滑動刪除
+              新食物幾秒即可輸入，無需搜尋資料庫；輸錯可滑動刪除
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              連續記錄時獲得温和鼓勵，堅持越久，規律越容易顯現
+              連續記錄時獲得溫和鼓勵，堅持越久，規律越容易顯現
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
               一次記錄腹脹、腹瀉和便秘等症狀、排便類型（布里斯托糞便分類法）與壓力，適用於 IBS-C、IBS-D 和 IBS-M
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              可為餐點加上照片，照片與其他資料一樣只保存在裝置上
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              可從主畫面小工具快速開始記錄餐點或症狀
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -893,7 +903,7 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">規律洞察</div>
           <h2>發現身體規律，了解自己的腸胃</h2>
-          <p class="pillar-body">每個人的 IBS 與食物不耐受表現都不同。Darmi 透過滾動 7 天趨勢顯示症狀變化，幫助你回顾新食物、壓力或生活習慣變化與身體狀態之間的關聯。Pro 可擴展至 14 天和 30 天。</p>
+          <p class="pillar-body">每個人的 IBS 與食物不耐受表現都不同。Darmi 透過滾動 7 天趨勢顯示症狀變化，幫助你回顧新食物、壓力或生活習慣變化與身體狀態之間的關聯。Pro 可擴展至 14 天和 30 天。</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -909,7 +919,7 @@
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              專註發現你的個人規律，而不是提供泛泛的 IBS 建議
+              專注發現你的個人規律，而不是提供泛泛的 IBS 建議
             </li>
           </ul>
         </div>
@@ -917,7 +927,7 @@
           <div class="phone-outer">
             <div class="phone-inner">
               <div class="phone-pill"></div>
-              <img src="/screenshots/gut-health-calendar.png" alt="用顏色标記腸胃狀態的 Darmi 日曆畫面" />
+              <img src="/screenshots/gut-health-calendar.png" alt="用顏色標記腸胃狀態的 Darmi 日曆畫面" />
             </div>
           </div>
         </div>
@@ -951,7 +961,7 @@
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              把數周記錄汇总成清楚檢視
+              把數週記錄彙整成清楚檢視
             </li>
           </ul>
         </div>
@@ -971,7 +981,7 @@
             <span class="faq-q">Darmi 可以記錄什麼？</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Darmi 記錄飲食、症狀、布里斯托糞便分類法中的排便類型與壓力。每條記錄都有時間，便於觀察飲食與身體感受隨時間的關聯。</p>
+          <p class="faq-answer">Darmi 記錄飲食、症狀、布里斯托糞便分類法中的排便類型與壓力。每筆記錄都有時間，便於觀察飲食與身體感受隨時間的關聯。</p>
         </div>
 
         <div class="faq-item" role="group">
@@ -1003,7 +1013,7 @@
             <span class="faq-q">記錄一餐需要多久？</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">借助已保存飲食和常吃食物的快速選擇，大多數記錄只需幾秒。</p>
+          <p class="faq-answer">透過已儲存餐點和常吃食物的快速選擇，大多數記錄只需幾秒。</p>
         </div>
 
         <div class="faq-item" role="group">
@@ -1032,10 +1042,10 @@
 
         <div class="faq-item" role="group">
           <button class="faq-btn" aria-expanded="false">
-            <span class="faq-q">Darmi 支持哪些語言？</span>
+            <span class="faq-q">Darmi 支援哪些語言？</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Darmi 支持 8 種語言：English、Deutsch、簡體中文、繁體中文、日本語、Français、Español 和 Português。</p>
+          <p class="faq-answer">Darmi 支援 8 種語言：English、Deutsch、簡體中文、繁體中文、日本語、Français、Español 和 Português。</p>
         </div>
       </div>
     </section>
@@ -1043,7 +1053,7 @@
     <!-- ── CTA ── -->
     <section class="cta-section" aria-labelledby="cta-heading">
       <h2 id="cta-heading">從今天開始了解自己的腸胃</h2>
-      <p>下載 Darmi，不到一分钟即可開始第一條記錄。</p>
+      <p>下載 Darmi，不到一分鐘即可開始第一條記錄。</p>
       <a class="btn-cta" href="https://apps.apple.com/us/app/darmi-ibs-food-symptom-tracker/id6759197247">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         前往 App Store 下載
