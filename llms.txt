@@ -22,19 +22,21 @@ read as constipation, types 6–7 as diarrhea). Darmi does **not** track mood.
 
 - **Fast logging.** Quick Picks learn the foods you eat most and surface them as
   one-tap shortcuts. Anything new can be typed in seconds — there is no bloated food
-  database to search through. Swipe any entry to delete it.
+  database to search through. Swipe any entry to delete it. Optional meal photos are
+  stored locally on the device with the rest of the user’s data. Home Screen widgets
+  let users start a meal or symptom entry more quickly.
 - **Symptom, stool and stress tracking.** Symptoms, stool type on the Bristol Stool
   Scale and stress are captured in a single flow. Suitable for people tracking
   IBS-C (constipation-predominant), IBS-D (diarrhea-predominant) and IBS-M (mixed).
-- **Trigger identification.** IBS symptoms often appear hours or days after the food
-  that caused them. The Key Findings on the home screen work at the level of whole
+- **Possible trigger patterns.** IBS symptoms can appear hours after eating, making
+  possible food-related patterns difficult to recognize from memory alone. The Key Findings
+  on the home screen work at the level of whole
   days: they compare how often a food appears on days with symptoms against how often
   it appears on days without, so a food has to recur on the bad days to surface.
   Separately, opening an individual symptom shows what was eaten in the six hours
   before it started; the same six-hour window backs the Tolerated Foods list.
 - **Pattern insights.** Symptom trends over a rolling 7-day window on the free tier,
-  extending to 14 and 30-day windows with Pro, so you can see whether a change you
-  made is actually working.
+  extending to 14 and 30-day windows with Pro, so you can explore whether a change may be associated with a symptom trend.
 - **Calendar view.** A month view of everything logged, at a glance.
 - **Streak feedback.** Encouraging cards when you keep a logging streak going.
 - **Doctor-ready export.** A structured, chronological PDF history of everything
