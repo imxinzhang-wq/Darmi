@@ -289,9 +289,9 @@
     .nav-link:hover { opacity: 1; }
 
     .language-switcher { position: relative; }
-    .language-switcher summary { list-style: none; cursor: pointer; font-size: 13px; color: var(--fg); opacity: .72; padding: 8px 2px; white-space: nowrap; }
+    .language-switcher summary { display: inline-flex; align-items: center; gap: 6px; list-style: none; cursor: pointer; font-size: 13px; color: var(--fg); opacity: .72; padding: 8px 2px; white-space: nowrap; }
     .language-switcher summary::-webkit-details-marker { display: none; }
-    .language-switcher summary::after { content: "⌄"; margin-left: 5px; }
+    .language-switcher summary::after { content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); }
     .language-menu { position: absolute; right: 0; top: calc(100% + 8px); min-width: 156px; padding: 7px; border: 1px solid var(--border); border-radius: 12px; background: rgba(246,242,236,.98); box-shadow: 0 14px 35px rgba(37,29,22,.14); }
     .language-menu a { display: block; padding: 8px 10px; border-radius: 7px; font-size: 13px; white-space: nowrap; }
     .language-menu a:hover { background: rgba(37,29,22,.06); }
