@@ -35,21 +35,6 @@ Stool Scale. Darmi does not track mood.
 - **Doctor-ready PDF.** Export recent meal, symptom and stool records for review and
   discussion. PDFs do not include stress records, photos or trend charts.
 
-## Free vs Pro
-
-| Feature | Free | Pro |
-| --- | --- | --- |
-| Basic logging | Unlimited | Unlimited |
-| Symptom trends | 7 days | 7, 14, 30 and 90 days |
-| Key Findings | Preview 1 | Full results |
-| Better-tolerated foods | Preview 2 | Full results |
-| Meal photos | 1 per entry | 3 per entry |
-| PDF export | 1 per calendar month; latest 2 weeks | Unlimited; latest 12 weeks |
-| Custom symptoms | Not included | Included |
-
-The 2-week and 12-week limits describe PDF export coverage, not how long health
-records remain stored.
-
 ## Privacy model
 
 - No account, sign-up or login.
