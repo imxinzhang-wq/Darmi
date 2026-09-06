@@ -106,7 +106,7 @@
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "Free to download and free to use for unlimited logging, 7-day insights and one PDF export per calendar month. An optional Pro in-app purchase (monthly, yearly or lifetime) unlocks unlimited exports, 14 and 30-day insight windows, the full set of Key Findings and Tolerated Foods, and custom symptoms."
+        "description": "免費版包括不限次數記錄、7 天趨勢、1 條重點發現與 2 項較耐受食物預覽、每筆 1 張餐點照片，以及每個日曆月 1 次涵蓋近 2 週的 PDF 匯出。Pro 提供 14、30、90 天趨勢、完整分析、每筆 3 張照片、自訂症狀，以及不限次數且涵蓋近 12 週的 PDF 匯出。匯出範圍不是記錄保存期限。"
       },
       "publisher": {
         "@id": "https://darmi.app/#organization"
@@ -129,7 +129,7 @@
           "name": "Darmi 如何幫助發現可能的 IBS 食物誘因？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Darmi 比較某種食物在有症狀與無症狀的日子中出現的頻率，只呈現反覆出現的關聯。開啟單次症狀，還可查看發生前六小時的飲食。"
+            "text": "Darmi 的重點發現會篩選症狀發作前六小時的飲食，再與無症狀日記錄比較。詳情頁彙整所選期間的關聯，而非把單次發作當作獨立報告。"
           }
         },
         {
@@ -145,7 +145,7 @@
           "name": "可以匯出 Darmi 資料與醫師分享嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以。Darmi 按時間順序整理記錄，可在就醫討論時匯出並分享。"
+            "text": "可以。你可以將近期飲食、症狀和排便記錄匯出為 PDF，方便就醫時回顧與討論。PDF 不包含壓力記錄、照片或趨勢圖。"
           }
         },
         {
@@ -169,7 +169,7 @@
           "name": "Darmi 免費嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Darmi 可免費下載並使用，包括不限次數的記錄、7 天洞察和每個日曆月一次 PDF 匯出。選購 Pro 提供不限次數匯出、14 天和 30 天洞察、完整的重點發現與較能耐受食物，以及自訂症狀。"
+            "text": "免費版包括不限次數記錄、7 天趨勢、1 條重點發現與 2 項較耐受食物預覽、每筆 1 張餐點照片，以及每個日曆月 1 次涵蓋近 2 週的 PDF 匯出。Pro 提供 14、30、90 天趨勢、完整分析、每筆 3 張照片、自訂症狀，以及不限次數且涵蓋近 12 週的 PDF 匯出。匯出範圍不是記錄保存期限。"
           }
         },
         {
@@ -584,6 +584,7 @@
       display: block;
     }
 
+
     /* ── FAQ ── */
     .faq-section {
       border-top: 1px solid var(--border);
@@ -861,7 +862,7 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">可能的食物誘因</div>
           <h2>留意可能的食物誘因，找到更適合自己的食物</h2>
-          <p class="pillar-body">腸躁症的症狀可能在進食數小時甚至數天後出現，僅憑記憶很難判斷食物誘因。Darmi 會比較有症狀與無症狀的日子，觀察某種食物出現的頻率；只有反覆出現的關聯才會作為可能的誘因顯示。開啟單次症狀，還可查看發生前六小時吃過什麼。</p>
+          <p class="pillar-body">Darmi 結合進食時間與症狀記錄，觀察哪些食物反覆出現在症狀發作前六小時，並參考無症狀日的飲食記錄，協助你發現值得進一步觀察的食物關聯。</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -887,11 +888,11 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">規律洞察</div>
           <h2>發現身體規律，了解自己的腸胃</h2>
-          <p class="pillar-body">每個人的 IBS 與食物不耐受表現都不同。Darmi 透過滾動 7 天趨勢顯示症狀變化，幫助你回顧新食物、壓力或生活習慣變化與身體狀態之間的關聯。Pro 可擴展至 14 天和 30 天。</p>
+          <p class="pillar-body">Darmi 可比較目前與上一個等長期間的症狀天數；資料足夠時，還可比較平均嚴重程度、查看日／週趨勢與相關飲食統計，並從每日快照返回當天記錄。免費版提供 7 天趨勢，Pro 擴展至 14、30 和 90 天。</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              查看 7 天症狀趨勢，Pro 可擴展至 14 天和 30 天
+              看見症狀是否變少、程度是否減輕；免費版 7 天，Pro 支援 14、30、90 天
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -933,11 +934,11 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">便於就醫討論</div>
           <h2>把清楚記錄帶給醫師</h2>
-          <p class="pillar-body">Darmi 會按時間順序整理所有記錄，並可匯出分享。下次就醫時，你可以基於具體記錄溝通，而不必依賴模糊回憶。</p>
+          <p class="pillar-body">將近期飲食、症狀和排便記錄匯出為 PDF，方便就醫時回顧與討論。</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              結構化、按時間排列的飲食與症狀記錄
+              結構化、按時間排列的飲食、症狀和排便記錄
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -973,7 +974,7 @@
             <span class="faq-q">Darmi 如何幫助發現可能的 IBS 食物誘因？</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Darmi 比較某種食物在有症狀與無症狀的日子中出現的頻率，只呈現反覆出現的關聯。開啟單次症狀，還可查看發生前六小時的飲食。</p>
+          <p class="faq-answer">Darmi 的重點發現會篩選症狀發作前六小時的飲食，再與無症狀日記錄比較。詳情頁彙整所選期間的關聯，而非把單次發作當作獨立報告。</p>
         </div>
 
         <div class="faq-item" role="group">
@@ -989,7 +990,7 @@
             <span class="faq-q">可以匯出 Darmi 資料與醫師分享嗎？</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">可以。Darmi 按時間順序整理記錄，可在就醫討論時匯出並分享。</p>
+          <p class="faq-answer">可以。你可以將近期飲食、症狀和排便記錄匯出為 PDF，方便就醫時回顧與討論。PDF 不包含壓力記錄、照片或趨勢圖。</p>
         </div>
 
         <div class="faq-item" role="group">
@@ -1013,7 +1014,7 @@
             <span class="faq-q">Darmi 免費嗎？</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Darmi 可免費下載並使用，包括不限次數的記錄、7 天洞察和每個日曆月一次 PDF 匯出。選購 Pro 提供不限次數匯出、14 天和 30 天洞察、完整的重點發現與較能耐受食物，以及自訂症狀。</p>
+          <p class="faq-answer">免費版包括不限次數記錄、7 天趨勢、1 條重點發現與 2 項較耐受食物預覽、每筆 1 張餐點照片，以及每個日曆月 1 次涵蓋近 2 週的 PDF 匯出。Pro 提供 14、30、90 天趨勢、完整分析、每筆 3 張照片、自訂症狀，以及不限次數且涵蓋近 12 週的 PDF 匯出。匯出範圍不是記錄保存期限。</p>
         </div>
 
         <div class="faq-item" role="group">
