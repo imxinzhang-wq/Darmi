@@ -106,7 +106,7 @@
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "Free to download and free to use for unlimited logging, 7-day insights and one PDF export per calendar month. An optional Pro in-app purchase (monthly, yearly or lifetime) unlocks unlimited exports, 14 and 30-day insight windows, the full set of Key Findings and Tolerated Foods, and custom symptoms."
+        "description": "Darmi 可免费下载。免费版包括不限次数记录、7 天趋势、1 条关键发现与 2 项较耐受食物预览、每条 1 张餐食照片，以及每自然月 1 次涵盖近 2 周的 PDF 导出。Pro 提供 14、30、90 天趋势、完整分析、每条 3 张照片、自定义症状，以及不限次数且涵盖近 12 周的 PDF 导出。导出范围不是记录保存期限。"
       },
       "publisher": {
         "@id": "https://darmi.app/#organization"
@@ -129,7 +129,7 @@
           "name": "Darmi 如何帮助发现可能的 IBS 食物诱因？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Darmi 比较某种食物在有症状和无症状的日子中出现的频率，只呈现反复出现的相关性。打开单次症状，还可查看发生前六小时的饮食。"
+            "text": "Darmi 的关键发现会筛选症状发作前六小时的饮食，再与无症状日的记录比较。详情页汇总所选时段内的关联，而不是把单次发作作为独立报告。"
           }
         },
         {
@@ -145,7 +145,7 @@
           "name": "可以导出 Darmi 数据与医生分享吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以。Darmi 按时间顺序整理记录，可在就医沟通时导出并分享。"
+            "text": "可以。你可以将近期饮食、症状和排便记录导出为 PDF，方便就医时回顾和讨论。PDF 不包含压力记录、照片或趋势图。"
           }
         },
         {
@@ -169,7 +169,7 @@
           "name": "Darmi 免费吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Darmi 可免费下载和使用，包括不限次数的记录、7 天洞察和每个自然月一次 PDF 导出。可选 Pro 提供不限次数导出、14 天和 30 天洞察、完整的关键发现与较耐受食物，以及自定义症状。"
+            "text": "Darmi 可免费下载。免费版包括不限次数记录、7 天趋势、1 条关键发现与 2 项较耐受食物预览、每条 1 张餐食照片，以及每自然月 1 次涵盖近 2 周的 PDF 导出。Pro 提供 14、30、90 天趋势、完整分析、每条 3 张照片、自定义症状，以及不限次数且涵盖近 12 周的 PDF 导出。导出范围不是记录保存期限。"
           }
         },
         {
@@ -584,6 +584,18 @@
       display: block;
     }
 
+    /* ── Free vs Pro ── */
+    .comparison-section { padding: 84px 24px; background: var(--surface); }
+    .comparison-inner { max-width: 900px; margin: 0 auto; }
+    .comparison-inner h2 { margin: 8px 0 28px; font-family: var(--serif); font-size: clamp(32px, 4vw, 48px); }
+    .comparison-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 20px; background: #fff; }
+    .comparison-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
+    .comparison-table th, .comparison-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+    .comparison-table th { color: var(--ink); font-size: 14px; letter-spacing: .02em; background: rgba(222,138,99,.08); }
+    .comparison-table tr:last-child td { border-bottom: 0; }
+    .comparison-table th:not(:first-child), .comparison-table td:not(:first-child) { text-align: center; }
+    .comparison-note { margin: 14px 4px 0; color: var(--muted); font-size: 14px; }
+
     /* ── FAQ ── */
     .faq-section {
       border-top: 1px solid var(--border);
@@ -861,15 +873,15 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">可能的食物诱因</div>
           <h2>留意可能的食物诱因，找到更适合自己的食物</h2>
-          <p class="pillar-body">肠易激综合征的症状可能在进食数小时甚至数天后出现，仅凭记忆很难判断食物诱因。Darmi 会比较有症状和无症状的日子，观察某种食物出现的频率；只有反复出现的相关性才会作为可能的诱因展示。打开单次症状，还可查看发生前六小时吃过什么。</p>
+          <p class="pillar-body">Darmi 结合进食时间与症状记录，观察哪些食物反复出现在症状发作前六小时，并参考无症状日的饮食记录，帮助你发现值得进一步观察的食物关联。</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              比较有症状与无症状的日子，整理可能的食物诱因
+              结合症状发作前六小时与无症状日的饮食记录
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              关注反复出现的规律，而非单次情况；每次症状可回看前六小时
+              汇总一段时间内反复出现的关联，而非把单次情况当作结论
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -887,11 +899,11 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">规律洞察</div>
           <h2>发现身体规律，理解自己的肠胃</h2>
-          <p class="pillar-body">每个人的 IBS 与食物不耐受表现都不同。Darmi 通过滚动 7 天趋势展示症状变化，帮助你回顾新食物、压力或生活习惯变化与身体状态之间的相关性。Pro 可扩展至 14 天和 30 天。</p>
+          <p class="pillar-body">每个人的 IBS 表现都不同。Darmi 帮你比较当前与上一等长周期的症状天数；数据足够时，还可比较平均严重程度、查看日／周趋势和相关饮食统计，并从每日快照回到当天记录。免费版提供 7 天趋势，Pro 扩展至 14、30 和 90 天。</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              查看 7 天症状趋势，Pro 可扩展至 14 天和 30 天
+              看见症状是否变少、程度是否减轻；免费版 7 天，Pro 支持 14、30、90 天
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -933,11 +945,11 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">便于就医沟通</div>
           <h2>把清晰记录带给医生</h2>
-          <p class="pillar-body">Darmi 会按时间顺序整理所有记录，并可导出分享。下次就医时，你可以基于具体记录沟通，而不必依赖模糊回忆。</p>
+          <p class="pillar-body">将近期饮食、症状和排便记录导出为 PDF，方便就医时回顾和讨论。</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              结构化、按时间排列的饮食与症状记录
+              结构化、按时间排列的饮食、症状和排便记录
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -949,6 +961,28 @@
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="comparison-section" id="plans" aria-labelledby="plans-heading">
+      <div class="comparison-inner">
+        <div class="how-eyebrow">Darmi Pro</div>
+        <h2 id="plans-heading">免费版与 Pro</h2>
+        <div class="comparison-scroll">
+          <table class="comparison-table">
+            <thead><tr><th scope="col">功能</th><th scope="col">免费版</th><th scope="col">Pro</th></tr></thead>
+            <tbody>
+            <tr><td>基础记录</td><td>不限次数</td><td>不限次数</td></tr>
+            <tr><td>症状趋势</td><td>7 天</td><td>7、14、30、90 天</td></tr>
+            <tr><td>Key Findings</td><td>预览 1 条</td><td>完整结果</td></tr>
+            <tr><td>较耐受食物</td><td>预览 2 项</td><td>完整结果</td></tr>
+            <tr><td>餐食照片</td><td>每条 1 张</td><td>每条 3 张</td></tr>
+            <tr><td>PDF 导出</td><td>每自然月 1 次 · 近 2 周</td><td>不限次数 · 近 12 周</td></tr>
+            <tr><td>自定义症状</td><td>—</td><td>支持</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="comparison-note">“近 2 周／12 周”是 PDF 导出范围，不是记录保存期限。</p>
       </div>
     </section>
 
@@ -973,7 +1007,7 @@
             <span class="faq-q">Darmi 如何帮助发现可能的 IBS 食物诱因？</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Darmi 比较某种食物在有症状和无症状的日子中出现的频率，只呈现反复出现的相关性。打开单次症状，还可查看发生前六小时的饮食。</p>
+          <p class="faq-answer">Darmi 的关键发现会筛选症状发作前六小时的饮食，再与无症状日的记录比较。详情页汇总所选时段内的关联，而不是把单次发作作为独立报告。</p>
         </div>
 
         <div class="faq-item" role="group">
@@ -989,7 +1023,7 @@
             <span class="faq-q">可以导出 Darmi 数据与医生分享吗？</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">可以。Darmi 按时间顺序整理记录，可在就医沟通时导出并分享。</p>
+          <p class="faq-answer">可以。你可以将近期饮食、症状和排便记录导出为 PDF，方便就医时回顾和讨论。PDF 不包含压力记录、照片或趋势图。</p>
         </div>
 
         <div class="faq-item" role="group">
@@ -1013,7 +1047,7 @@
             <span class="faq-q">Darmi 免费吗？</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Darmi 可免费下载和使用，包括不限次数的记录、7 天洞察和每个自然月一次 PDF 导出。可选 Pro 提供不限次数导出、14 天和 30 天洞察、完整的关键发现与较耐受食物，以及自定义症状。</p>
+          <p class="faq-answer">Darmi 可免费下载。免费版包括不限次数记录、7 天趋势、1 条关键发现与 2 项较耐受食物预览、每条 1 张餐食照片，以及每自然月 1 次涵盖近 2 周的 PDF 导出。Pro 提供 14、30、90 天趋势、完整分析、每条 3 张照片、自定义症状，以及不限次数且涵盖近 12 周的 PDF 导出。导出范围不是记录保存期限。</p>
         </div>
 
         <div class="faq-item" role="group">

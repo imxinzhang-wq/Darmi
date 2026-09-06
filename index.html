@@ -88,7 +88,7 @@
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD",
-          "description": "Free to download and free to use for unlimited logging, 7-day insights and one PDF export per calendar month. An optional Pro in-app purchase (monthly, yearly or lifetime) unlocks unlimited exports, 14 and 30-day insight windows, the full set of Key Findings and Tolerated Foods, and custom symptoms."
+          "description": "Darmi is free to download. Free includes unlimited logging, 7-day trends, a preview of 1 Key Finding and 2 Better-tolerated Foods, 1 photo per meal, and one PDF export per calendar month covering the latest 2 weeks. Pro adds 14, 30 and 90-day trends, full findings, 3 photos per meal, custom symptoms, and unlimited PDF exports covering the latest 12 weeks. These PDF ranges do not limit how long records are stored."
         },
         "publisher": { "@id": "https://darmi.app/#organization" }
       },
@@ -97,12 +97,12 @@
         "@id": "https://darmi.app/#faq",
         "mainEntity": [
           {"@type":"Question","name":"What does Darmi track?","acceptedAnswer":{"@type":"Answer","text":"Darmi tracks four things: meals, symptoms, stool type on the Bristol Stool Scale, and stress. Everything is timestamped so you can see the relationship between what you eat and how you feel over time."}},
-          {"@type":"Question","name":"How does Darmi help identify IBS trigger foods?","acceptedAnswer":{"@type":"Answer","text":"Darmi's Key Findings compare how often a food appears on days when you had symptoms against how often it appears on days when you didn't, so a trigger has to show up repeatedly to surface. Opening an individual symptom additionally shows what you ate in the six hours before it started."}},
+          {"@type":"Question","name":"How does Darmi help identify IBS trigger foods?","acceptedAnswer":{"@type":"Answer","text":"Darmi's Key Findings look for foods that repeatedly appear in the six hours before symptoms begin, then compare those records with symptom-free days. The details summarize associations across the selected period rather than presenting one episode as a separate report."}},
           {"@type":"Question","name":"Is Darmi a medical diagnosis tool?","acceptedAnswer":{"@type":"Answer","text":"No. Darmi is a tracking and pattern-analysis app, not a diagnostic or medical device. It's designed to help you organize information to discuss with a healthcare provider."}},
-          {"@type":"Question","name":"Can I export my Darmi data to share with a doctor?","acceptedAnswer":{"@type":"Answer","text":"Yes. Darmi keeps a chronological log of your entries that can be exported and shared during medical consultations."}},
+          {"@type":"Question","name":"Can I export my Darmi data to share with a doctor?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can export recent meal, symptom and stool records as a PDF to review and discuss during medical consultations. The PDF does not include stress records, photos or trend charts."}},
           {"@type":"Question","name":"How long does it take to log a meal in Darmi?","acceptedAnswer":{"@type":"Answer","text":"Most entries take a few seconds with Quick Picks for saved meals and regular foods. You can also start from a Home Screen widget."}},
           {"@type":"Question","name":"Do I need an account to use Darmi?","acceptedAnswer":{"@type":"Answer","text":"No account is required. Meals, symptoms, notes and optional meal photos stay on your device, and Darmi works offline."}},
-          {"@type":"Question","name":"Is Darmi free?","acceptedAnswer":{"@type":"Answer","text":"Darmi is free to download and free to use for unlimited logging, 7-day insights and one PDF export per calendar month. An optional Pro upgrade — monthly, yearly or lifetime — unlocks unlimited exports, 14 and 30-day insight windows, the full set of Key Findings and Tolerated Foods, and custom symptoms."}},
+          {"@type":"Question","name":"Is Darmi free?","acceptedAnswer":{"@type":"Answer","text":"Darmi is free to download. Free includes unlimited logging, 7-day trends, a preview of 1 Key Finding and 2 Better-tolerated Foods, 1 photo per meal, and one PDF export per calendar month covering the latest 2 weeks. Pro adds 14, 30 and 90-day trends, full findings, 3 photos per meal, custom symptoms, and unlimited PDF exports covering the latest 12 weeks. These PDF ranges do not limit how long records are stored."}},
           {"@type":"Question","name":"Does Darmi work for conditions other than IBS?","acceptedAnswer":{"@type":"Answer","text":"Darmi is built primarily for IBS — including IBS-C, IBS-D and IBS-M — but its food-and-symptom tracking approach can support anyone trying to identify dietary triggers for digestive discomfort."}},
           {"@type":"Question","name":"What languages does Darmi support?","acceptedAnswer":{"@type":"Answer","text":"Darmi is available in 8 languages: English, Deutsch, 简体中文, 繁體中文, 日本語, Français, Español, and Português."}}
         ]
@@ -501,6 +501,18 @@
       display: block;
     }
 
+    /* ── Free vs Pro ── */
+    .comparison-section { padding: 84px 24px; background: var(--surface); }
+    .comparison-inner { max-width: 900px; margin: 0 auto; }
+    .comparison-inner h2 { margin: 8px 0 28px; font-family: var(--serif); font-size: clamp(32px, 4vw, 48px); }
+    .comparison-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 20px; background: #fff; }
+    .comparison-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
+    .comparison-table th, .comparison-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+    .comparison-table th { color: var(--ink); font-size: 14px; letter-spacing: .02em; background: rgba(222,138,99,.08); }
+    .comparison-table tr:last-child td { border-bottom: 0; }
+    .comparison-table th:not(:first-child), .comparison-table td:not(:first-child) { text-align: center; }
+    .comparison-note { margin: 14px 4px 0; color: var(--muted); font-size: 14px; }
+
     /* ── FAQ ── */
     .faq-section {
       border-top: 1px solid var(--border);
@@ -778,19 +790,19 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">Trigger Identification</div>
           <h2>Explore Possible Triggers. Find Foods That May Suit You.</h2>
-          <p class="pillar-body">IBS symptoms can appear hours after eating, which can make possible food-related patterns difficult to recognize from memory alone. So Darmi compares whole days: how often a food shows up on the days you had symptoms, against how often it shows up on the days you didn't. A food has to keep appearing on the bad days to surface as a finding. When you want the detail on one particular episode, opening that symptom shows what you ate in the six hours before it started.</p>
+          <p class="pillar-body">Darmi combines meal times with symptom records to identify foods that repeatedly appear in the six hours before symptoms begin. It also compares those patterns with foods recorded on symptom-free days, helping you discover possible food associations worth exploring further.</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Compares symptom days against symptom-free days to highlight possible triggers
+              Combines a six-hour pre-symptom window with symptom-free-day records
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Surfaces recurring patterns, not just single incidents — with a six-hour lookback on any individual symptom
+              Summarizes recurring associations over time, rather than treating one episode as proof
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Helps distinguish likely trigger foods from your genuinely safe foods
+              Highlights possible food associations and better-tolerated foods
             </li>
           </ul>
         </div>
@@ -804,11 +816,11 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">Pattern Insights</div>
           <h2>Understand Your Body's Unique Patterns</h2>
-          <p class="pillar-body">Everyone's IBS is different — what triggers one person does nothing to another. Darmi's insights track how your symptoms trend over a rolling 7-day window, so you can see whether a change you made (a new food, less stress, a new routine) is actually working, not just guess. Pro widens that view to 14 and 30 days.</p>
+          <p class="pillar-body">Everyone's IBS is different. Darmi helps you see how symptoms change over time: compare symptom days with the previous equal-length period, compare average severity when enough data is available, explore daily or weekly trends and related food statistics, and jump from a daily snapshot back to that day's records. Free includes 7 days; Pro adds 14, 30 and 90 days.</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Symptom trend tracking over 7 days, extending to 14 and 30 days with Pro
+              See whether symptoms are less frequent or less severe, with 7-day trends free and 14, 30 and 90 days in Pro
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -850,7 +862,7 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">Doctor-Ready Data</div>
           <h2>Bring Better Data to Your Doctor</h2>
-          <p class="pillar-body">"It's been bad lately" isn't something a doctor can act on. Darmi keeps a structured, chronological history of everything you've logged — exportable and ready to share, so your next appointment starts with real data instead of a foggy recap.</p>
+          <p class="pillar-body">Export recent meal, symptom and stool records as a PDF, making them easier to review and discuss during a medical appointment.</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -858,7 +870,7 @@
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Exportable format built for sharing with healthcare providers
+              PDF export designed for review with healthcare providers
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -866,6 +878,28 @@
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="comparison-section" id="plans" aria-labelledby="plans-heading">
+      <div class="comparison-inner">
+        <div class="how-eyebrow">Darmi Pro</div>
+        <h2 id="plans-heading">Free vs Pro</h2>
+        <div class="comparison-scroll">
+          <table class="comparison-table">
+            <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro</th></tr></thead>
+            <tbody>
+            <tr><td>Basic logging</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>Symptom trends</td><td>7 days</td><td>7, 14, 30, 90 days</td></tr>
+            <tr><td>Key Findings</td><td>Preview 1</td><td>Full results</td></tr>
+            <tr><td>Better-tolerated foods</td><td>Preview 2</td><td>Full results</td></tr>
+            <tr><td>Meal photos</td><td>1 per entry</td><td>3 per entry</td></tr>
+            <tr><td>PDF export</td><td>1/calendar month · latest 2 weeks</td><td>Unlimited · latest 12 weeks</td></tr>
+            <tr><td>Custom symptoms</td><td>—</td><td>Included</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="comparison-note">PDF ranges describe export coverage, not how long your records are stored.</p>
       </div>
     </section>
 
@@ -890,7 +924,7 @@
             <span class="faq-q">How does Darmi help identify IBS trigger foods?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Darmi's Key Findings compare how often a food appears on days when you had symptoms against how often it appears on days when you didn't, so a trigger has to show up repeatedly to surface. Opening an individual symptom additionally shows what you ate in the six hours before it started.</p>
+          <p class="faq-answer">Darmi's Key Findings look for foods that repeatedly appear in the six hours before symptoms begin, then compare those records with symptom-free days. The details summarize associations across the selected period rather than presenting one episode as a separate report.</p>
         </div>
 
         <div class="faq-item" role="group">
@@ -906,7 +940,7 @@
             <span class="faq-q">Can I export my Darmi data to share with a doctor?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Yes. Darmi keeps a chronological log of your entries that can be exported and shared during medical consultations.</p>
+          <p class="faq-answer">Yes. You can export recent meal, symptom and stool records as a PDF to review and discuss during medical consultations. The PDF does not include stress records, photos or trend charts.</p>
         </div>
 
         <div class="faq-item" role="group">
@@ -930,7 +964,7 @@
             <span class="faq-q">Is Darmi free?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Darmi is free to download and free to use for unlimited logging, 7-day insights and one PDF export per calendar month. An optional Pro upgrade — monthly, yearly or lifetime — unlocks unlimited exports, 14 and 30-day insight windows, the full set of Key Findings and Tolerated Foods, and custom symptoms.</p>
+          <p class="faq-answer">Darmi is free to download. Free includes unlimited logging, 7-day trends, a preview of 1 Key Finding and 2 Better-tolerated Foods, 1 photo per meal, and one PDF export per calendar month covering the latest 2 weeks. Pro adds 14, 30 and 90-day trends, full findings, 3 photos per meal, custom symptoms, and unlimited PDF exports covering the latest 12 weeks. These PDF ranges do not limit how long records are stored.</p>
         </div>
 
         <div class="faq-item" role="group">

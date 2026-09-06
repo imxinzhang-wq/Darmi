@@ -106,7 +106,7 @@
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "Free to download and free to use for unlimited logging, 7-day insights and one PDF export per calendar month. An optional Pro in-app purchase (monthly, yearly or lifetime) unlocks unlimited exports, 14 and 30-day insight windows, the full set of Key Findings and Tolerated Foods, and custom symptoms."
+        "description": "Kostenlos: unbegrenzte Einträge, 7-Tage-Trends, Vorschau auf 1 wichtige Erkenntnis und 2 besser verträgliche Lebensmittel, 1 Foto pro Mahlzeit sowie 1 PDF pro Kalendermonat für die letzten 2 Wochen. Pro: 14, 30 und 90 Tage, vollständige Ergebnisse, 3 Fotos, eigene Symptome und unbegrenzte PDFs für die letzten 12 Wochen. Die PDF-Zeiträume begrenzen nicht die Speicherdauer."
       },
       "publisher": {
         "@id": "https://darmi.app/#organization"
@@ -129,7 +129,7 @@
           "name": "Wie hilft Darmi, mögliche Auslöser zu erkennen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Darmi vergleicht, wie oft Lebensmittel an Tagen mit und ohne Symptome vorkommen. Erst wiederkehrende Zusammenhänge werden angezeigt. Bei einem einzelnen Symptom siehst du außerdem die Mahlzeiten der sechs Stunden davor."
+            "text": "Darmis wichtigste Erkenntnisse suchen nach Lebensmitteln, die wiederholt in den sechs Stunden vor Symptombeginn vorkommen, und vergleichen sie mit beschwerdefreien Tagen. Die Detailansicht fasst Zusammenhänge im gewählten Zeitraum zusammen."
           }
         },
         {
@@ -145,7 +145,7 @@
           "name": "Kann ich meine Daten für ein Arztgespräch exportieren?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja. Darmi führt deine Einträge chronologisch und ermöglicht einen Export zum Teilen bei medizinischen Gesprächen."
+            "text": "Ja. Aktuelle Mahlzeiten-, Symptom- und Stuhlaufzeichnungen lassen sich als PDF exportieren. Stressaufzeichnungen, Fotos und Trenddiagramme sind nicht enthalten."
           }
         },
         {
@@ -169,7 +169,7 @@
           "name": "Ist Darmi kostenlos?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Darmi ist kostenlos verfügbar und bietet unbegrenzte Einträge, 7-Tage-Analysen und einen PDF-Export pro Kalendermonat. Pro ist optional und schaltet unbegrenzte Exporte, 14- und 30-Tage-Ansichten, alle wichtigen Erkenntnisse und verträglichen Lebensmittel sowie eigene Symptome frei."
+            "text": "Kostenlos: unbegrenzte Einträge, 7-Tage-Trends, Vorschau auf 1 wichtige Erkenntnis und 2 besser verträgliche Lebensmittel, 1 Foto pro Mahlzeit sowie 1 PDF pro Kalendermonat für die letzten 2 Wochen. Pro: 14, 30 und 90 Tage, vollständige Ergebnisse, 3 Fotos, eigene Symptome und unbegrenzte PDFs für die letzten 12 Wochen. Die PDF-Zeiträume begrenzen nicht die Speicherdauer."
           }
         },
         {
@@ -584,6 +584,18 @@
       display: block;
     }
 
+    /* ── Free vs Pro ── */
+    .comparison-section { padding: 84px 24px; background: var(--surface); }
+    .comparison-inner { max-width: 900px; margin: 0 auto; }
+    .comparison-inner h2 { margin: 8px 0 28px; font-family: var(--serif); font-size: clamp(32px, 4vw, 48px); }
+    .comparison-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 20px; background: #fff; }
+    .comparison-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
+    .comparison-table th, .comparison-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+    .comparison-table th { color: var(--ink); font-size: 14px; letter-spacing: .02em; background: rgba(222,138,99,.08); }
+    .comparison-table tr:last-child td { border-bottom: 0; }
+    .comparison-table th:not(:first-child), .comparison-table td:not(:first-child) { text-align: center; }
+    .comparison-note { margin: 14px 4px 0; color: var(--muted); font-size: 14px; }
+
     /* ── FAQ ── */
     .faq-section {
       border-top: 1px solid var(--border);
@@ -861,7 +873,7 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">Mögliche Auslöser</div>
           <h2>Mögliche Auslöser erkennen. Gut verträgliche Lebensmittel finden.</h2>
-          <p class="pillar-body">Reizdarm-Beschwerden können Stunden oder Tage nach einer Mahlzeit auftreten. Deshalb vergleicht Darmi ganze Tage: wie oft ein Lebensmittel an Tagen mit Beschwerden vorkommt und wie oft an beschwerdefreien Tagen. Erst wiederkehrende Zusammenhänge werden als mögliche Auslöser angezeigt. Bei einem einzelnen Symptom siehst du außerdem, was du in den sechs Stunden davor gegessen hast.</p>
+          <p class="pillar-body">Darmi verbindet Essenszeiten mit Symptomaufzeichnungen und untersucht, welche Lebensmittel wiederholt in den sechs Stunden vor Symptombeginn vorkommen. Der Vergleich mit beschwerdefreien Tagen zeigt mögliche Zusammenhänge, die du weiter beobachten kannst.</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -887,11 +899,11 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">Muster erkennen</div>
           <h2>Die persönlichen Muster deines Körpers verstehen</h2>
-          <p class="pillar-body">Reizdarm und Unverträglichkeiten sind individuell. Darmi zeigt Symptomtrends über ein gleitendes 7-Tage-Fenster. So erkennst du, ob Veränderungen bei Ernährung, Stress oder Routine mit deinem Befinden zusammenhängen. Pro erweitert die Ansicht auf 14 und 30 Tage.</p>
+          <p class="pillar-body">Darmi vergleicht die Anzahl deiner Symptomtage mit dem vorherigen gleich langen Zeitraum. Bei genügend Daten siehst du auch die durchschnittliche Stärke, Tages- oder Wochentrends und zugehörige Ernährungsstatistiken und kannst vom Tagesüberblick zu den Einträgen springen. Kostenlos: 7 Tage; Pro: 14, 30 und 90 Tage.</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Symptomtrends über 7 Tage, mit Pro auch über 14 und 30 Tage
+              Erkenne, ob Symptome seltener oder schwächer werden: 7 Tage kostenlos, 14, 30 und 90 Tage mit Pro
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -933,7 +945,7 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">Für das Arztgespräch</div>
           <h2>Übersichtliche Daten zum Arztgespräch mitbringen</h2>
-          <p class="pillar-body">Darmi führt alle Einträge strukturiert und chronologisch zusammen. Du kannst die Übersicht exportieren und beim Arztgespräch teilen – als konkrete Grundlage statt einer ungenauen Erinnerung.</p>
+          <p class="pillar-body">Exportiere aktuelle Mahlzeiten-, Symptom- und Stuhlaufzeichnungen als PDF, um sie beim Arzttermin leichter durchzugehen und zu besprechen.</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -949,6 +961,28 @@
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="comparison-section" id="plans" aria-labelledby="plans-heading">
+      <div class="comparison-inner">
+        <div class="how-eyebrow">Darmi Pro</div>
+        <h2 id="plans-heading">Kostenlos vs. Pro</h2>
+        <div class="comparison-scroll">
+          <table class="comparison-table">
+            <thead><tr><th scope="col">Funktion</th><th scope="col">Kostenlos</th><th scope="col">Pro</th></tr></thead>
+            <tbody>
+            <tr><td>Einträge</td><td>Unbegrenzt</td><td>Unbegrenzt</td></tr>
+            <tr><td>Symptomtrends</td><td>7 Tage</td><td>7, 14, 30, 90 Tage</td></tr>
+            <tr><td>Wichtige Erkenntnisse</td><td>Vorschau: 1</td><td>Alle Ergebnisse</td></tr>
+            <tr><td>Besser verträgliche Lebensmittel</td><td>Vorschau: 2</td><td>Alle Ergebnisse</td></tr>
+            <tr><td>Mahlzeitenfotos</td><td>1 pro Eintrag</td><td>3 pro Eintrag</td></tr>
+            <tr><td>PDF-Export</td><td>1/Monat · letzte 2 Wochen</td><td>Unbegrenzt · letzte 12 Wochen</td></tr>
+            <tr><td>Eigene Symptome</td><td>—</td><td>Enthalten</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="comparison-note">Die Zeiträume von 2 bzw. 12 Wochen gelten nur für PDF-Exporte, nicht für die Speicherdauer.</p>
       </div>
     </section>
 
@@ -973,7 +1007,7 @@
             <span class="faq-q">Wie hilft Darmi, mögliche Auslöser zu erkennen?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Darmi vergleicht, wie oft Lebensmittel an Tagen mit und ohne Symptome vorkommen. Erst wiederkehrende Zusammenhänge werden angezeigt. Bei einem einzelnen Symptom siehst du außerdem die Mahlzeiten der sechs Stunden davor.</p>
+          <p class="faq-answer">Darmis wichtigste Erkenntnisse suchen nach Lebensmitteln, die wiederholt in den sechs Stunden vor Symptombeginn vorkommen, und vergleichen sie mit beschwerdefreien Tagen. Die Detailansicht fasst Zusammenhänge im gewählten Zeitraum zusammen.</p>
         </div>
 
         <div class="faq-item" role="group">
@@ -989,7 +1023,7 @@
             <span class="faq-q">Kann ich meine Daten für ein Arztgespräch exportieren?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Ja. Darmi führt deine Einträge chronologisch und ermöglicht einen Export zum Teilen bei medizinischen Gesprächen.</p>
+          <p class="faq-answer">Ja. Aktuelle Mahlzeiten-, Symptom- und Stuhlaufzeichnungen lassen sich als PDF exportieren. Stressaufzeichnungen, Fotos und Trenddiagramme sind nicht enthalten.</p>
         </div>
 
         <div class="faq-item" role="group">
@@ -1013,7 +1047,7 @@
             <span class="faq-q">Ist Darmi kostenlos?</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">Darmi ist kostenlos verfügbar und bietet unbegrenzte Einträge, 7-Tage-Analysen und einen PDF-Export pro Kalendermonat. Pro ist optional und schaltet unbegrenzte Exporte, 14- und 30-Tage-Ansichten, alle wichtigen Erkenntnisse und verträglichen Lebensmittel sowie eigene Symptome frei.</p>
+          <p class="faq-answer">Kostenlos: unbegrenzte Einträge, 7-Tage-Trends, Vorschau auf 1 wichtige Erkenntnis und 2 besser verträgliche Lebensmittel, 1 Foto pro Mahlzeit sowie 1 PDF pro Kalendermonat für die letzten 2 Wochen. Pro: 14, 30 und 90 Tage, vollständige Ergebnisse, 3 Fotos, eigene Symptome und unbegrenzte PDFs für die letzten 12 Wochen. Die PDF-Zeiträume begrenzen nicht die Speicherdauer.</p>
         </div>
 
         <div class="faq-item" role="group">

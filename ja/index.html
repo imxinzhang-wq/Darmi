@@ -106,7 +106,7 @@
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
-        "description": "Free to download and free to use for unlimited logging, 7-day insights and one PDF export per calendar month. An optional Pro in-app purchase (monthly, yearly or lifetime) unlocks unlimited exports, 14 and 30-day insight windows, the full set of Key Findings and Tolerated Foods, and custom symptoms."
+        "description": "無料版は、記録無制限、7日間の推移、「主な気づき」1件と「比較的合いやすい食べ物」2件のプレビュー、食事ごとに写真1枚、月1回・直近2週間のPDFに対応します。Proは14・30・90日間、全結果、写真3枚、カスタム症状、回数無制限・直近12週間のPDFに対応します。PDFの期間は記録の保存期間ではありません。"
       },
       "publisher": {
         "@id": "https://darmi.app/#organization"
@@ -129,7 +129,7 @@
           "name": "IBSの原因になりそうな食べ物をどう見つけますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "症状があった日となかった日で食品の登場頻度を比較し、繰り返し見られる関連を示します。個別の症状では、開始前6時間の食事も確認できます。"
+            "text": "「主な気づき」では、症状開始前6時間に繰り返し登場する食べ物を調べ、症状のない日の記録と比較します。詳細画面は、1回の症状を個別レポートにするのではなく、選択期間の関連をまとめます。"
           }
         },
         {
@@ -145,7 +145,7 @@
           "name": "記録を医師と共有できますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "はい。記録を時系列でまとめて書き出し、診察時に共有できます。"
+            "text": "はい。最近の食事、症状、便の記録をPDFに書き出せます。ストレス記録、写真、推移グラフはPDFに含まれません。"
           }
         },
         {
@@ -169,7 +169,7 @@
           "name": "Darmiは無料ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "無料版では記録回数に制限がなく、7日間の分析と月1回のPDF書き出しを利用できます。任意のProでは、無制限の書き出し、14日間・30日間の分析、すべての主な気づきと合いやすい食べ物、カスタム症状を利用できます。"
+            "text": "無料版は、記録無制限、7日間の推移、「主な気づき」1件と「比較的合いやすい食べ物」2件のプレビュー、食事ごとに写真1枚、月1回・直近2週間のPDFに対応します。Proは14・30・90日間、全結果、写真3枚、カスタム症状、回数無制限・直近12週間のPDFに対応します。PDFの期間は記録の保存期間ではありません。"
           }
         },
         {
@@ -584,6 +584,18 @@
       display: block;
     }
 
+    /* ── Free vs Pro ── */
+    .comparison-section { padding: 84px 24px; background: var(--surface); }
+    .comparison-inner { max-width: 900px; margin: 0 auto; }
+    .comparison-inner h2 { margin: 8px 0 28px; font-family: var(--serif); font-size: clamp(32px, 4vw, 48px); }
+    .comparison-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 20px; background: #fff; }
+    .comparison-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
+    .comparison-table th, .comparison-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+    .comparison-table th { color: var(--ink); font-size: 14px; letter-spacing: .02em; background: rgba(222,138,99,.08); }
+    .comparison-table tr:last-child td { border-bottom: 0; }
+    .comparison-table th:not(:first-child), .comparison-table td:not(:first-child) { text-align: center; }
+    .comparison-note { margin: 14px 4px 0; color: var(--muted); font-size: 14px; }
+
     /* ── FAQ ── */
     .faq-section {
       border-top: 1px solid var(--border);
@@ -861,7 +873,7 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">気になる食べ物</div>
           <h2>原因になりそうな食べ物と、合う食べ物を知る</h2>
-          <p class="pillar-body">過敏性腸症候群の症状は、食事から数時間後、ときには数日後に現れることがあります。Darmiは、症状があった日となかった日で各食品の登場頻度を比較し、繰り返し見られる関連を「関連する可能性のある食べ物」として示します。個別の症状を開くと、開始前6時間の食事も確認できます。</p>
+          <p class="pillar-body">Darmiは食事時刻と症状記録を組み合わせ、症状が始まる前6時間に繰り返し登場する食べ物を調べます。さらに症状のない日の食事記録と比較し、今後観察する価値のある食べ物との関連を見つけやすくします。</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -887,7 +899,7 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">パターンの把握</div>
           <h2>自分だけの体調パターンを理解する</h2>
-          <p class="pillar-body">IBSの現れ方は人それぞれです。Darmiは7日間の推移でお腹の症状を表示し、食事、ストレス、生活習慣の変化と体調のパターンを振り返りやすくします。Proでは14日間・30日間も確認できます。</p>
+          <p class="pillar-body">Darmiでは、症状があった日数を直前の同じ長さの期間と比較できます。データが十分なら平均的な重症度、日別・週別の推移、関連する食事統計も確認でき、日ごとの概要から当日の記録へ戻れます。無料版は7日間、Proは14日間・30日間・90日間に対応します。</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -933,7 +945,7 @@
         <div class="pillar-text">
           <div class="pillar-eyebrow">相談に使える記録</div>
           <h2>医師への相談に、整理された記録を</h2>
-          <p class="pillar-body">Darmiはすべての記録を時系列で整理します。書き出して共有できるため、診察では曖昧な記憶ではなく、具体的な記録をもとに相談できます。</p>
+          <p class="pillar-body">最近の食事、症状、便の記録をPDFに書き出し、受診時の振り返りや相談に活用できます。</p>
           <ul class="pillar-bullets">
             <li>
               <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FAF0EB"/><path d="M4.5 8.2l2.1 2.1L11.5 6" stroke="#C06A3D" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -949,6 +961,28 @@
             </li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section class="comparison-section" id="plans" aria-labelledby="plans-heading">
+      <div class="comparison-inner">
+        <div class="how-eyebrow">Darmi Pro</div>
+        <h2 id="plans-heading">無料版と Pro</h2>
+        <div class="comparison-scroll">
+          <table class="comparison-table">
+            <thead><tr><th scope="col">機能</th><th scope="col">無料版</th><th scope="col">Pro</th></tr></thead>
+            <tbody>
+            <tr><td>基本記録</td><td>無制限</td><td>無制限</td></tr>
+            <tr><td>症状の推移</td><td>7日間</td><td>7・14・30・90日間</td></tr>
+            <tr><td>主な気づき</td><td>1件プレビュー</td><td>全結果</td></tr>
+            <tr><td>比較的合いやすい食べ物</td><td>2件プレビュー</td><td>全結果</td></tr>
+            <tr><td>食事写真</td><td>1件につき1枚</td><td>1件につき3枚</td></tr>
+            <tr><td>PDF書き出し</td><td>月1回・直近2週間</td><td>無制限・直近12週間</td></tr>
+            <tr><td>カスタム症状</td><td>—</td><td>対応</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="comparison-note">「直近2週間／12週間」はPDFの対象期間で、記録の保存期間ではありません。</p>
       </div>
     </section>
 
@@ -973,7 +1007,7 @@
             <span class="faq-q">IBSの原因になりそうな食べ物をどう見つけますか？</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">症状があった日となかった日で食品の登場頻度を比較し、繰り返し見られる関連を示します。個別の症状では、開始前6時間の食事も確認できます。</p>
+          <p class="faq-answer">「主な気づき」では、症状開始前6時間に繰り返し登場する食べ物を調べ、症状のない日の記録と比較します。詳細画面は、1回の症状を個別レポートにするのではなく、選択期間の関連をまとめます。</p>
         </div>
 
         <div class="faq-item" role="group">
@@ -989,7 +1023,7 @@
             <span class="faq-q">記録を医師と共有できますか？</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">はい。記録を時系列でまとめて書き出し、診察時に共有できます。</p>
+          <p class="faq-answer">はい。最近の食事、症状、便の記録をPDFに書き出せます。ストレス記録、写真、推移グラフはPDFに含まれません。</p>
         </div>
 
         <div class="faq-item" role="group">
@@ -1013,7 +1047,7 @@
             <span class="faq-q">Darmiは無料ですか？</span>
             <svg class="faq-icon" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </button>
-          <p class="faq-answer">無料版では記録回数に制限がなく、7日間の分析と月1回のPDF書き出しを利用できます。任意のProでは、無制限の書き出し、14日間・30日間の分析、すべての主な気づきと合いやすい食べ物、カスタム症状を利用できます。</p>
+          <p class="faq-answer">無料版は、記録無制限、7日間の推移、「主な気づき」1件と「比較的合いやすい食べ物」2件のプレビュー、食事ごとに写真1枚、月1回・直近2週間のPDFに対応します。Proは14・30・90日間、全結果、写真3枚、カスタム症状、回数無制限・直近12週間のPDFに対応します。PDFの期間は記録の保存期間ではありません。</p>
         </div>
 
         <div class="faq-item" role="group">
