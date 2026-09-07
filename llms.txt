@@ -39,7 +39,8 @@ Stool Scale. Darmi does not track mood.
 
 - No account, sign-up or login.
 - Health records are stored locally on the user's device; the app works offline.
-- The privacy policy separately describes anonymous usage events.
+- The current released app does not send product-usage analytics events to Darmi
+  or to a third-party analytics provider.
 - No advertising SDKs.
 - Full policy: https://darmi.app/privacy.html
 
