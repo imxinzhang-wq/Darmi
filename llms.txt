@@ -58,6 +58,7 @@ information for users and healthcare providers to review and discuss.
 
 - [English landing page](https://darmi.app/)
 - [German landing page](https://darmi.app/de/)
+- [Spanish landing page](https://darmi.app/es/)
 - [Japanese landing page](https://darmi.app/ja/)
 - [Simplified Chinese landing page](https://darmi.app/zh/)
 - [Traditional Chinese landing page](https://darmi.app/zh-hant/)
